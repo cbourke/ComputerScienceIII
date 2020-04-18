@@ -1,4 +1,6 @@
 # Computer Science III
+### CSCE 310 - Data Structures & Algorithms
+
 **[Department of Computer Science & Engineering](https://cse.unl.edu)**  
 **[University of Nebraska-Lincoln](https://unl.edu)**
 
@@ -11,6 +13,11 @@ the University of Nebraska-Lincoln
 A lecture note set is available here: https://cse.unl.edu/~cbourke/ComputerScienceThree.pdf
 
 ## Course Offerings
+
+### Summer 2020
+
+- Course Link: https://canvas.unl.edu/courses/83536
+- Lectures: https://www.youtube.com/playlist?list=PL4IH6CVPpTZURyb_9UK3OqzypICKp1mPl
 
 ### Summer 2019
 
