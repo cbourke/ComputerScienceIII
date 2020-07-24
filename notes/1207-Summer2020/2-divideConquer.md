@@ -154,6 +154,10 @@ where
 
 ## Linear Systems
 
+* Given $n$ equations with $n$ variables $\vec{x} = (v_1, \ldots, v_n)$
+* Build an augmented matrix $A\vec{b}$
+* Make the matrix upper triangular: elements below the diagonal are all zero
+* for each row $i$: we make elements in column $i$ zero below the element $a_{i,i}$
 
 ```text
 
