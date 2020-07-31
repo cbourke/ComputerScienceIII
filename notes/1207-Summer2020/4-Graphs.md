@@ -15,7 +15,7 @@
   * Sets of pairs of vertices (sets of edges)
 * Recommendation: NetworkX https://networkx.github.io/
 
-#### Basic Searching
+#### Depth First Search
 
 * Depth First Search: searches a graph as deep as possible first before backtracking
 * We want to make sure that we make progress: we don't want to visit or process a vertex more than once, and we don't want to get stuck in a loop
@@ -39,4 +39,69 @@
   * Directed: a back edge indicates a cycle, 
   * Directed: all four types of edges are possible
     
+#### Breadth First Search
   
+* Alternative: explore the "closest" vertices first
+* Closest = *distance*, not necessarily *weighted distance*
+
+* Observations
+  * In a BFS Tree, no back/forward edges are possible in an undirected graph
+  * In a BFS Tree, forward edges are not possible, but back edges are in a directed graph
+  * With BFS, the finishing/starting time stamps have the exact same order (FIFO)
+  * Cross edges in a BFS connect cousins/aunts, etc.  They do NOT connect descendents/ancestors
+  * A BFS tree identifies a shortest path *from the initial vertex* to any other connected vertex in an unweighted graph: BFS is a single source shortest path algorithm
+
+#### Applications
+
+* Connectivity: Given two vertices $x, y \in V$, determine if there is a path from $x$ to $y$ (directed, undirected, etc.)
+* Topological Sorting: given a poset (partially ordered set), output a consistent total order
+  * Run DFS and note the finishing times
+  * Sort the elements in descending order according to the finishing time stamps
+  * The resulting order is a total order consistent with the poset  
+* Cycle detection: detect a cycle by finding forward/back or cross edges (undirected graphs)
+* Bipartite Testing: given a graph $G$ is it bipartite
+* Condensation graphs: often you want to *simplify* a graph topology
+  * You can take an arbitrary digraph (directed graph) possibly with cycles and *collapse* it into an "equivalent" graph without cycles
+  * Collapses *strongly connected vertices*: there is a path from $x$ to $y$ AND a path from $y$ to $x$
+  * The result is a DAG: Directed Acyclic Graph that preserves connectivity
+    * Run DFS once, keeping track of the finish times
+    * Reverse the graph (transpose graph) and run DFS on it
+    * Each time the second DFS restarts, you start a new Strongly Connected Component
+    * You can add edges based on connectivity in the original graph
+  
+## Minimum Spanning Trees
+
+* Given an undirected weighted graph (edges have weights), we want to create a
+*spanning tree* of minimal total weight
+* A spanning tree is simply a tree that connects all of the vertices into one graph
+* If your graph is disconnected, there is no spanning tree, but you *can* create a spanning forest
+* In general, there may be many minimum spanning trees
+
+### Kruskal's Algorithm
+
+* Greedy: we'll consider the least weighted edges first, we'll include the edge if and only if it does not *induce* a cycle
+* Outline:
+  * Presort all the edges in non-decreasing order
+  * You add the edge to the MST $T$ if and only if it does not create a cycle
+  * You stop after you have added $n-1$ edges OR you run out of edges to consider
+
+### Prim's Algorithm
+
+* We don't do cycle detection
+* Instead, we iteratively build a tree starting at an arbitrary vertex
+* Throughout the algorithm we build a "frontier" of "fringe" vertices/edges
+* We expand the tree, adding a "fringe" vertex on each iteration
+
+```text
+
+
+
+
+
+
+
+
+
+
+
+```
