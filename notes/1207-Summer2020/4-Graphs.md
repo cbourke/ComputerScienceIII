@@ -92,6 +92,20 @@
 * Throughout the algorithm we build a "frontier" of "fringe" vertices/edges
 * We expand the tree, adding a "fringe" vertex on each iteration
 
+
+### Shortest Distance Algorithms: Dijkstra's
+
+* Start at a *source* vertex $s4
+* Produces a shortest-path from $s$ to all other vertices
+* Works on directed or undirected graphs with edge weights
+* It updates a list of triples: vertex, distance to the vertex (from $s$) and the *predecessor* or how to get there
+* It uses a min-heap/priority queue to store references to the vertices
+* BUT: when using the min-heap, you need the ability to update the priority/weight
+
+### Shortest Distance Algorithm: Floyd-Warshall Algorithm
+
+* 
+
 ```text
 
 
