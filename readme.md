@@ -14,6 +14,11 @@ A lecture note set is available here: https://cse.unl.edu/~cbourke/ComputerScien
 
 ## Course Offerings
 
+### Summer 2021
+
+- Course Link: https://canvas.unl.edu/courses/108493
+- Lectures: https://www.youtube.com/playlist?list=PL4IH6CVPpTZXGuvXF4g1ZM4iP73KvnVdg
+
 ### Summer 2020
 
 - Course Link: https://canvas.unl.edu/courses/83536
