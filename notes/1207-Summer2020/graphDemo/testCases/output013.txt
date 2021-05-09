@@ -1,0 +1,39 @@
+Graph:
+(0, 2, 3.000)
+(0, 3, 2.100)
+(1, 2, 3.140)
+(1, 3, 2.500)
+(2, 3, 3.900)
+
+Depth First Traversal (vertex visited order):
+[0, 2, 1, 3]
+
+Breadth First Traversal (lowest-weight-next):
+[0, 3, 2, 1]
+
+Minimum Spanning Tree:
+(0, 2, 3.000)
+(0, 3, 2.100)
+(1, 3, 2.500)
+Type: Full Spanning Tree
+Total Weight: 7.600
+
+Shortest Paths:
+0 -> 1: 
+	(0,3,2.10) -> (3,1,2.50) 
+	Path Weight: 4.60
+0 -> 2: 
+	(0,2,3.00) 
+	Path Weight: 3.00
+0 -> 3: 
+	(0,3,2.10) 
+	Path Weight: 2.10
+1 -> 2: 
+	(1,2,3.14) 
+	Path Weight: 3.14
+1 -> 3: 
+	(1,3,2.50) 
+	Path Weight: 2.50
+2 -> 3: 
+	(2,3,3.90) 
+	Path Weight: 3.90

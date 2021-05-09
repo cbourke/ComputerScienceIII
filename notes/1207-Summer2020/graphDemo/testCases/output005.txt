@@ -1,0 +1,98 @@
+Graph:
+(0, 2, 3.000)
+(0, 3, 2.100)
+(0, 4, 4.300)
+(1, 2, 3.140)
+(1, 3, 2.500)
+(2, 3, 3.900)
+(2, 4, 10.300)
+(5, 6, 8.000)
+(5, 7, 5.000)
+(6, 7, 6.000)
+
+Depth First Traversal (vertex visited order):
+[0, 2, 1, 3, 4, 5, 6, 7]
+
+Breadth First Traversal (lowest-weight-next):
+[0, 3, 2, 4, 1, 5, 7, 6]
+
+Minimum Spanning Tree:
+(0, 2, 3.000)
+(0, 3, 2.100)
+(0, 4, 4.300)
+(1, 3, 2.500)
+(5, 7, 5.000)
+(6, 7, 6.000)
+Type: Spanning Forrest
+Total Weight: 22.900
+
+Shortest Paths:
+0 -> 1: 
+	(0,3,2.10) -> (3,1,2.50) 
+	Path Weight: 4.60
+0 -> 2: 
+	(0,2,3.00) 
+	Path Weight: 3.00
+0 -> 3: 
+	(0,3,2.10) 
+	Path Weight: 2.10
+0 -> 4: 
+	(0,4,4.30) 
+	Path Weight: 4.30
+0 -> 5: 
+	no path
+0 -> 6: 
+	no path
+0 -> 7: 
+	no path
+1 -> 2: 
+	(1,2,3.14) 
+	Path Weight: 3.14
+1 -> 3: 
+	(1,3,2.50) 
+	Path Weight: 2.50
+1 -> 4: 
+	(1,3,2.50) -> (3,0,2.10) -> (0,4,4.30) 
+	Path Weight: 8.90
+1 -> 5: 
+	no path
+1 -> 6: 
+	no path
+1 -> 7: 
+	no path
+2 -> 3: 
+	(2,3,3.90) 
+	Path Weight: 3.90
+2 -> 4: 
+	(2,0,3.00) -> (0,4,4.30) 
+	Path Weight: 7.30
+2 -> 5: 
+	no path
+2 -> 6: 
+	no path
+2 -> 7: 
+	no path
+3 -> 4: 
+	(3,0,2.10) -> (0,4,4.30) 
+	Path Weight: 6.40
+3 -> 5: 
+	no path
+3 -> 6: 
+	no path
+3 -> 7: 
+	no path
+4 -> 5: 
+	no path
+4 -> 6: 
+	no path
+4 -> 7: 
+	no path
+5 -> 6: 
+	(5,6,8.00) 
+	Path Weight: 8.00
+5 -> 7: 
+	(5,7,5.00) 
+	Path Weight: 5.00
+6 -> 7: 
+	(6,7,6.00) 
+	Path Weight: 6.00
