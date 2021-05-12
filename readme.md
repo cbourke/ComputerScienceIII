@@ -2,10 +2,11 @@
 ### CSCE 310 - Data Structures & Algorithms
 
 **[Department of Computer Science & Engineering](https://cse.unl.edu)**  
+**[College of Engineering](https://engineering.unl.edu/)**
 **[University of Nebraska-Lincoln](https://unl.edu)**
 
 This repository hosts documents, files, and other artifacts
-related to Computer Science III (offered as CSCE 310) at 
+related to Computer Science III (offered as CSCE 310) at
 the University of Nebraska-Lincoln
 
 ## Lecture Notes
@@ -31,8 +32,8 @@ A lecture note set is available here: https://cse.unl.edu/~cbourke/ComputerScien
 
 ## Other Resources
 
-Some free online resources including related courses and 
-textbooks: 
+Some free online resources including related courses and
+textbooks:
 
 - [Coursera Algorithms](https://www.coursera.org/course/algo)
 - [Coursera Algorithms II](https://www.coursera.org/course/algo2)
@@ -41,7 +42,7 @@ textbooks:
 
 ### LaTeX
 
-Though you can submit written assignments hand written, you 
+Though you can submit written assignments hand written, you
 can never go wrong with LaTeX, here are some resources:
 
 - [Getting Started With Latex](http://www.tug.org/begin.html)
