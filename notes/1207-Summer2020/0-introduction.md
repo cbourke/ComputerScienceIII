@@ -4,14 +4,14 @@
 ### Course Introduction
 
 
-# Administrivia 
+# Administrivia
 
-* Introduction 
+* Introduction
   * Chris Bourke
   * Molly Lee
 * "Roll"
 * Course Format
-  * Lecture 
+  * Lecture
   * Office Hours
   * Online Course Tip
 * Canvas/other resources
@@ -30,14 +30,15 @@ $$\sum_{i=1}^n i = \frac{n(n+1)}{2}$$
 * Prerequisites for this course: CS1, CS2, Discrete Math
   * Proficiency in programming
   * Searching & Sorting Algorithms
-  * Basic Algorithms & Algorithm Analysis 
+  * Basic Algorithms & Algorithm Analysis
   * Basic Data Structures: stacks, queues, lists, binary search trees, graphs
-  * Proofs and logic 
+  * Proofs and logic
   * Basic Combinatorics
-  
+
 ## Review & Motivating Example
-    
+
   * Problem:
     * Given: a collection of points in the cartesian plane
     * Output: the minimal distance between any two points
-  
+
+### Algo Analysis:
