@@ -6,7 +6,7 @@
 * Lists, sets, etc.: array-based lists, linked lists
 * Stacks, Queues, Deques
 
-### Tree Review 
+### Tree Review
 
 * Trees are acyclic graphs
 * Binary Search Trees:
@@ -22,7 +22,7 @@
   * You *can* have degenerative trees such that the depth $d \in O(n)$
   * Goal: develop a tree that can *rebalance* itself so that no left/right side is *too* much larger than the other
   * Balanced BSTs have a guarantee of $d \in O(\log{n})$
-  
+
 ### AVL Trees
 
 * The *height* of a node $u$ in a tree denoted $h(u)$ is the longest path to any of its descendant leaves
@@ -50,7 +50,7 @@
 * The root has at least 2 children unless it is a leaf
 * Non-leaf nodes with $k$ children have $k-1$ keys
 * All leaves appear at the same level and are non-empty
-* Focus on $m = 3$: 
+* Focus on $m = 3$:
   * 2-3 Trees
   * Every node may have 1 or 2 keys (2 or 3 children)
 * A "two node" is a node containing 1 key $k$ with two children (the usual binary search tree node)
@@ -66,7 +66,7 @@
 
 ### Huffman Coding
 
-* Coding Theory: 
+* Coding Theory:
   * Adding redundancy to ensure that information is not lost in a "noisy" channel
   * Compressing information (lossy or non-lossy) to reduce its size
     * JPEGS, MPEGS, MP4s, MP3s
@@ -137,7 +137,7 @@ Collisisions
   * To accommodate deletion, every cell that is eventually occupied will need to have a "dirty bit" set
   * Initially with an emptier hash table, operations are very efficient, $O(1)$ (assuming not too many collisions)
   * But, as the table gets fuller or more of its dirty bits get set to true, then performance is no better than a regular array (list)
-  
+
 ## Chaining:
 
 * instead of probing you can "hang" another data struture off of each index
@@ -149,12 +149,12 @@ Collisisions
 
 * At some point performance will degrade: create a larger table
 * REquires creating a new array and *rehashing* all of the elements into this new array
-* Rehashing is generally $O(n)$ BUT it is not done very often 
+* Rehashing is generally $O(n)$ BUT it is not done very often
 * So over the lifetime of the data structure, the average performance is quite good and can be seen as $O(1)$ (amortized)
 * Generally you use a *load factor* to decide when to rehash: $n / m$ where $n$ is the number of elements in the table, $m$ is the size of the table
   * Load factor: the percent that the table is full
   * Example: if the load factor reaches .75 (75% full), then rehash
-  
+
 * General:
   * Smaller table -> more collisions -> slower access/insert BUT less wasted space
   * Larger tables -> fewer collisions -> faster access/insert BUT more wasted space
@@ -184,4 +184,3 @@ Collisisions
 
 
 ```
-
