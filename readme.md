@@ -15,9 +15,14 @@ A lecture note set is available here: https://cse.unl.edu/~cbourke/ComputerScien
 
 ## Course Offerings
 
-### Summer 2021
+### Fall 2021 (Honors)
 
-(starting July 12th, 2021)
+(starting Monday, August 23rd, 2021)
+
+- Course Link: https://canvas.unl.edu/courses/114259
+- Lectures: To Come
+
+### Summer 2021
 
 - Course Link: https://canvas.unl.edu/courses/108493
 - Lectures: https://www.youtube.com/playlist?list=PL4IH6CVPpTZXGuvXF4g1ZM4iP73KvnVdg
@@ -42,6 +47,13 @@ textbooks:
 - [Algorithms](http://jeffe.cs.illinois.edu/teaching/algorithms/) textbook by Jeff Erickson
 - [Open DSA](http://opendatastructures.org/) textbook
 
+### Algorithm & Data Structure Visualization Tools
+
+- https://algorithm-visualizer.org/
+- https://visualgo.net/en
+- https://graphery.reedcompbio.org/
+- https://www.cs.usfca.edu/~galles/visualization/Algorithms.html
+
 ### LaTeX
 
 Though you can submit written assignments hand written, you
@@ -53,7 +65,7 @@ can never go wrong with LaTeX, here are some resources:
 ### Python
 
 Though in general you'll be able to use any programming language
-for this course, we recommend [Python 3](https://www.python.org/).
+for this course, but we recommend [Python 3](https://www.python.org/).
 Some free courses to help you learn:
 
 - [Code Academy](https://www.codecademy.com/learn/learn-python-3)
