@@ -101,7 +101,53 @@ $$h: \mathbb{Z} \rightarrow \mathbb{Z}_m$$
 * That allows the hash function to map to indices 0 thru m-1 (to an array of size $m$)
 * Demo
 
+## Collision Resolutions
 
+### Open Addressing
+
+* If a collision occurs, you can simply map it to a second value in another location (index)
+* Linear Probing: go to the next adjacent cell/index and if it is empty, use it (keep going until you find a free cell)
+* Quadratic Probing: use a quadratic function to "probe" for another open location/index
+* You generally "wrap" around to the start of the array when you reach the end
+* You could also use a secondary hash function to "rehash" it
+* Other considerations
+  * If the hash table is full, you need to deal with that somehow
+  * If you want to support deletion of elements, you will need to keep track of which cells have been used before
+  * As the table gets fuller and fuller, collisions are much more likely: all operations become inefficient, O(n) for searching, insertion, deletion
+
+## Chaining:
+
+* Instead of probing for a different cell, you store multiple elements at the same location/index
+* To store multiple elements, you need another data structure
+* Each cell is a reference to another data structure such as a linked list or a Balanced BST
+* Instead of probing, the element is simply added to the secondary data structure
+* If you insert a LOT of elements, then it really isn't any better than the secondary data structure you're using
+  * Ex: searching becomes O(n)
+
+## Re-Hashing
+
+* At some point the performance will degrade: with more and more elements, all the cells become full or dirty or the secondary data struture becomes large
+* To resolve this, you periodically *rehash* and rebuild the table
+* You create a larger array with a different hash function to remap/rehash all of the elements
+* Rehashing is generally $O(n)$
+* Over the lifetime of the data structure, the *average* performance is quite good.
+  * For most operations, it will be O(1)
+  * Occasionally, you will need to rehash giving O(n)
+* You generally keep track of a *load factor* to decide when to rehash the table: $n / m$
+  * $n$ is the number of elements in the hash table
+  * $m$ is the size of the hash table
+  * Example: $n/m = .75$ (table is 75% full)
+* Generally this means that a hash table is a time-space tradeoff data structure:
+  * Smaller table -> more collisions -> slower access/insert/etc. = less wasted space
+  * Larger table -> fewer collisions -> faster operations, but MORE wasted space
+
+## Midterm
+
+* The miderm PDF handout will be auto-posted to Canvas at midnight
+* You will have 24 hours in which to complete it and turn in a PDF of it to Canvas
+* You are to work individually, no partners, no collaboration at any level
+* 100 points, 5 questions, 10% of your grade
+* No livestream on Tuesday: instead extended zoom office hours
 
 ```
 
