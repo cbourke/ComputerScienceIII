@@ -44,6 +44,43 @@
   * Directed graph: back edges are possible and indicate a *directed* cycle
   * Directed graph: all four types of edges are possible
 
+#### Breadth First Search
+
+* Explores each vertex that is "closest" to the initial vertex first
+* Closest = *distance* (number of edges), not with respect to any edges weights
+
+* Observations
+  * In a BFS tree for undirected graphs, no back/forward edges are possible
+  * In a BFS tree for directed graphs, back edges are possible but no forward edges are
+  * With BFS the finishing/discover orders are the same due to the FIFO nature of the queue
+  * Cross edges in a BFS tree connect cousins/aunts but never descednents/ancestors
+  * BFS may need to be restarted if it is disconnected (undirected graphs) or it is directed and some vertices are not reachable from other vertices
+
+#### Analysis
+
+* Both DFS and BFS only process each node exactly once
+* If your elementary operation is the "processing" of a node, and there are $n$ nodes, then both are $O(n)$
+* If visiting a node or "traversing" or "examining" an edge is your elementary operation, then it becomes $O(|V| + |E|) = O(n + m)$ (recall that $m = O(n^2)$)
+  * For sparse graphs $m = O(n)$ and so BFS/DFS is $O(n)$
+  * For dense graphs, $m = O(n^2)$ and so BFS/DFS becomes $O(n^2)$
+* Examining or traversing an edge or computing a neighborhood of a vertex may have different complexities based on the graph representation
+
+#### Applications
+
+* Connectivity: given two vertices $x, y \in V$ determine if there is a path between them (works for directed or undirected)
+* Topological Sorting: given a poset (partially ordered set), ie a DAG = Directed Acyclic Graph: imposing a total order on the set
+  * Run DFS and not the finishing times; sort them in descending order to get a total topological order out of it
+* Cycle detection: Undirected: forward or back or cross edge implies a cycle
+* Bipartite Testing: given a graph $G$ is it bipartite or not
+* Condensation Graph: it "collapses" a large complex graph into its *strongly connected components*
+  * Two vertices are *strongly connected* in a directed graph $G$ if there is a directed path from $x$ to $y$ *and* from $y$ to $x$
+  * A strongly connected component is a subset of vertices that are each strongly connected to each other 
+
+
+
+
+
+
 ```text
 
 
