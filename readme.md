@@ -11,7 +11,8 @@ the University of Nebraska-Lincoln
 
 ## Lecture Notes
 
-A lecture note set is available here: https://cse.unl.edu/~cbourke/ComputerScienceThree.pdf
+My lecture note set is available on BitBucket:
+https://bitbucket.org/chrisbourke/computerscienceiii/src/master/ComputerScienceThree.pdf 
 
 ## Course Offerings
 
