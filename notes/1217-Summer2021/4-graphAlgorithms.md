@@ -74,8 +74,21 @@
 * Bipartite Testing: given a graph $G$ is it bipartite or not
 * Condensation Graph: it "collapses" a large complex graph into its *strongly connected components*
   * Two vertices are *strongly connected* in a directed graph $G$ if there is a directed path from $x$ to $y$ *and* from $y$ to $x$
-  * A strongly connected component is a subset of vertices that are each strongly connected to each other 
+  * A strongly connected component is a subset of vertices that are each strongly connected to each other
 
+## Minimum Spanning Trees
+
+* Given an undirected (connected) weighted graph (edges have weights) we want to create a *spanning tree* of minimal total weight
+* A spanning tree is simply a tree (subset of edges with the same vertices) that "spans" the vertices: all vertices are connected
+* You can perform a MST algorithm on a disconnected graph, it would just give you a forest
+* In general there are many equivalent spanning trees
+
+### Kruskal's Algorithm
+
+* Greedy Algorithm: it makes *locally optimal choices* which lead to a *globally* optimal solution
+* Basic idea: you consider edges in increasing order of weight, adding them to your tree/forest as long as they do not induce a cycle
+* If you naively use BFS/DFS to detect cycles, you'll get $O(n^3)$ in the worst case
+* If instead, you use an alternative data structure, *disjoint set*, then you can get it down to $O(m\log{m})$
 
 
 

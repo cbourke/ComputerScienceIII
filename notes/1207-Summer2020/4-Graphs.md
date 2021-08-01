@@ -7,7 +7,7 @@
 
 * Undirected: edges have no orientation (x, y) = (y, x)
 * Directed graphs: edges have an orientation (x,y) is not the same (y,x)
-* Unweighted graphs: all edges have uniform weights of 1 
+* Unweighted graphs: all edges have uniform weights of 1
 * Weighted graphs: each edge may have a weight associated with it
 * Many ways to implement graphs:
   * Adjacency matrices
@@ -26,21 +26,21 @@
   * Have you processed this vertex already?
   * When did you first see this vertex?
   * When did you last see this vertex?
-  
+
 * DFS traversal can produce several artifacts
 * DFS Tree/Forest:
   * Tree Edges: edges that are traversed in the DFS traversal
   * Back Edges: connect a descendent in the DFS tree to an ancestor
   * Forward Edges: connect an ancestor in the DFS to a descendent
   * Cross Edges: connect components in a DFS forest
-* Observations: 
+* Observations:
   * In an undirected graph, only tree/back edges are possible (forward/back are the same thing)
   * In an undirected graph: the presence of a back edge implies a cycle
-  * Directed: a back edge indicates a cycle, 
+  * Directed: a back edge indicates a cycle,
   * Directed: all four types of edges are possible
-    
+
 #### Breadth First Search
-  
+
 * Alternative: explore the "closest" vertices first
 * Closest = *distance*, not necessarily *weighted distance*
 
@@ -68,7 +68,7 @@
     * Reverse the graph (transpose graph) and run DFS on it
     * Each time the second DFS restarts, you start a new Strongly Connected Component
     * You can add edges based on connectivity in the original graph
-  
+
 ## Minimum Spanning Trees
 
 * Given an undirected weighted graph (edges have weights), we want to create a
@@ -104,7 +104,7 @@
 
 ### Shortest Distance Algorithm: Floyd-Warshall Algorithm
 
-* 
+*
 
 ```text
 
