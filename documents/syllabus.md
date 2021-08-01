@@ -105,10 +105,10 @@ portions) as well as two exams.
 
 |  Category           | Number | Points Each | Total |
 |  -------------------|--------|-------------|-------|
-|  Assignments        |      6 |         150 |    900|
+|  Assignments        |     10 |         100 |  1,000|
 |  Midterm            |      1 |         100 |    100|
 |  Final              |      1 |         100 |    100|
-|  Total              |        |             |  1,100|
+|  Total              |        |             |  1,200|
 
 
 ## Scale
