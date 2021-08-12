@@ -84,6 +84,30 @@ This course is delivered in an asynchronous *hybrid* manner:
 
 -   Office hours will be held online via zoom
 
+## COVID Considerations
+
+Out of respect for faculty and staff, out of respect for the Learning Assistants,
+and out of respect for your fellow students and most especially yourself, you
+should make sure you are fully vaccinated if you plan to attend lecture, lab,
+and hack sessions in person.  Several vaccines are widely available, highly
+effective and backed by sound science.  The good majority of adults have
+been vaccinated and you should be one of them.  UNL has provided
+opportunities to receive a vaccine (free of charge); please consider doing this
+as soon as possible.  More information can be found here: [link to be determined].
+
+In addition, you should follow all health and safety guidelines published by
+the CDC, healthcare officials and the University of Nebraska--Lincoln.  This includes
+wearing masks indoors and attempting to keep social distance between peers
+***regardless of your vaccination status***.  If you feel ill or have had
+exposure to COVID-19, you **should not attend in-person** and instead utilize
+the online resources we have provided as outlined above.  
+
+Because there may be many faculty, staff, and students who have family members
+(myself included) who are yet unable to be vaccinated, you will be ***required***
+to wear a face mask when you attend lecture in person.
+If you prefer not to comply with this requirement for this course, you will need
+to attend lecture virtually.
+
 # Accommodations for Students with Disabilities
 
 The University strives to make all learning experiences as accessible as
