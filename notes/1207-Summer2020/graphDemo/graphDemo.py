@@ -1,8 +1,8 @@
 import networkx as nx
 from network2tikz import plot
-from graphNxUtils import nxWeightedGraphFromFile 
-from collections import deque 
-  
+from graphNxUtils import nxWeightedGraphFromFile
+from collections import deque
+
 #https://networkx.github.io/documentation/stable/tutorial.html
 #https://pypi.org/project/network2tikz/
 
@@ -52,7 +52,7 @@ def findPath(g, a, b):
         next = y
         break
     if next is None:
-      #done with curr, need to backtrack    
+      #done with curr, need to backtrack
       s.pop()
       status[curr] = "processed"
     else:
@@ -64,7 +64,7 @@ def findPath(g, a, b):
 
 def bfsTree(g, a):
   """
-  returns a BFS tree resulting from one BFS 
+  returns a BFS tree resulting from one BFS
   run starting at vertex a
   """
   t = nx.Graph()
@@ -92,5 +92,4 @@ def bfsTree(g, a):
 t = bfsTree(g, 0)
 plot(t,'mytree.tex',**style)
 
-
-
+nx.write_edgelist(g, "foo.txt")

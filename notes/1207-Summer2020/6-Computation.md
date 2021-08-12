@@ -34,11 +34,11 @@ Claim: languages are equivalent to problems
   * $x$ is a yes instance if $x \in L$
   * $x$ is a no instance if $x \not\in L$
 * Examples:
-  $$\{ G | \textrm{$G$ is an acyclic graph}\}$$ 
+  $$\{ G | \textrm{$G$ is an acyclic graph}\}$$
 * To reconcile a problem with our definition: take a problem and turn it into a language, we need an *encoding*
 * Given (say) a graph $G$, you can produce an encoding $\langle G \rangle$ of the graph $G$
 * You do this all the time: any problem can be encoded in binary, thus problems are the same thing as languages
-$$\{ \langle G\rangle | \textrm{$G$ is an acyclic graph}\}$$ 
+$$\{ \langle G\rangle | \textrm{$G$ is an acyclic graph}\}$$
 * Technical note: all invalid encodings are ignored (not in the language)
 * Given a language $L$ and an input string $x$, "solving" the language simply means determining whether or not $x$ is in $L$
 * These definitions/terminology only take care of decision problems: problems that have a yes or no answer
@@ -46,21 +46,21 @@ $$\{ \langle G\rangle | \textrm{$G$ is an acyclic graph}\}$$
   * Functional problems: you not only want to know if there is a Hamiltonian path or not, but if so, what is it (output: a path)
 * Consider the following language:
 
-$$\{ \langle G, w\rangle | \textrm{$G$ is a graph whose MST has a weight of at most $w$}\}$$ 
+$$\{ \langle G, w\rangle | \textrm{$G$ is a graph whose MST has a weight of at most $w$}\}$$
 
 ## Computational Models
 
-* To start, let's consider a simple *Finite State Automaton* 
+* To start, let's consider a simple *Finite State Automaton*
 * An FSA is a 5-tuple $(Q, \Sigma, \delta, q_0, F)$
   * $Q$ is a set of finite *states*
   * $\Sigma$ is our alphabet
   * $\delta: Q \times \Sigma \rightarrow Q$
   * $q_0 \in Q$ is an initial state
   * $F \subseteq Q$ is a set of *accepting states*
-* A FSA defines a language: 
+* A FSA defines a language:
   * On an input string $x$, it reads it bit by bit and transitions to a new state according to $\delta$
   * If at the end of the input string the machine is in an accept state, we accept the string and say that $x \in L_A$
-  * If at the end of the input string, 
+  * If at the end of the input string,
   the machine is in a reject state, we reject the input and say that $x \not\in L$
   * The input is read-only, one-way read only (you cannot reverse the reading)
   * No extra storage (memory) or data structure
@@ -98,7 +98,7 @@ $$\{ \langle G, w\rangle | \textrm{$G$ is a graph whose MST has a weight of at m
   * halt and reject (output 0) if $M(x)$ does not halt
 * Consider running a machine on itself: $M(M)$ or using an encoding, $\langle M, M \rangle$
   * Not that weird to run a program on itself: OS's run programs
-  * Emulators 
+  * Emulators
 * Now let's make another TM: $Q$ that takes one input (another TM)
 * $Q(\langle M \rangle)$:
   * halt and accept if $H(\langle M, M \rangle) = 0$
@@ -109,7 +109,7 @@ $$\{ \langle G, w\rangle | \textrm{$G$ is a graph whose MST has a weight of at m
   * does not halt if $H(\langle Q, Q \rangle) = 1$
 * Contradiction!
 * No such machine $H$ can exist for all TMs and for all inputs $x$
-* Rice's Theorem: in general, given a TM $M$ answering any non-trivial property of the language decided by $M$ is not decidable 
+* Rice's Theorem: in general, given a TM $M$ answering any non-trivial property of the language decided by $M$ is not decidable
 
 ### Another perspective
 
@@ -145,7 +145,7 @@ for all inputs $x$ then you can say that the machine is a *deterministic polynom
 * A nondeterministic Turning Machine will accept the input $x$ if *any* of its possible computation guesses accepts
 * If both phases operate in polynomial time, we say that it is a nondeterministic polynomial time Turning Machine
 * The set of all languages $L$ that are decidable by a nondeterministic polynomial time Turning Machine is called $\mathsf{NP}$
-("nondeterminisitic polynomial time") 
+("nondeterminisitic polynomial time")
 
 ### Comparison
 
@@ -163,7 +163,7 @@ ie $\mathsf{P} \neq \mathsf{NP}$
 ### Reductions
 
 * Goal: we want to establish the relative complexity of problems
-* Relative complexity of algorithms can be done easily with algorithm analysis 
+* Relative complexity of algorithms can be done easily with algorithm analysis
   * Quicksort is better than selection sort
   * Algorithms only establish an *upper bound* on the complexity of a problem
   * Coming up with algorithms is difficult
@@ -178,7 +178,7 @@ ie $\mathsf{P} \neq \mathsf{NP}$
   * $A$ *reduces* to $B$
   * NOT making $A$ simpler
   * Intuitively you are "reducing" an "easier" problem to a "harder" problem
-  * "I don't know how to solve $A$, but if I 
+  * "I don't know how to solve $A$, but if I
   could solve $B$ I could solve $A$, so I've reduced the problem of
   solving $A$ to the problem of solving $B$"
 
@@ -188,9 +188,9 @@ ie $\mathsf{P} \neq \mathsf{NP}$
 
 ### Polynomial Time Reductions
 
-* Let $P_1$ and $P_2$ be problems.  We say that $P_1$ reduces to $P_2$ and write 
+* Let $P_1$ and $P_2$ be problems.  We say that $P_1$ reduces to $P_2$ and write
   $$P_1 \leq_{\mathsf{P}} P_2$$
-if there exists function $f$ such that 
+if there exists function $f$ such that
   * $f$ maps all yes instances of $P_1$ to yes instances of $P_2$ (no instances likewise)
   * and $f$ is computable by a deterministic polynomial time algorithm
 
@@ -238,7 +238,7 @@ Given: a graph $G=(V,E)$ and an integer $k$, does there exist a vertex cover $V'
 
 A *vertex cover* is a set of vertices such that every edge has at least 1 end point in $V'$; the set of vertices "covers" all the edges:
   $$\forall e=(x, y) \in E [ x \in V' \vee y \in V']$$
-  
+
 ```text
 
 
