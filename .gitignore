@@ -33,3 +33,4 @@ figures/_minted*
 
 # development files in notes
 notes/*/dev
+demo.py
