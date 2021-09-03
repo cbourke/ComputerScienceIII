@@ -51,6 +51,89 @@ generate all possible *permutations*
 * Brute Force (combinatorial) solution:
   * generate every permutation of every vertex and check if it is a Hamiltonian Path
 
+## Backtracking
+
+* Generating combinatorial objects is "blind" problem solving
+* Often we need or it is better to take the *structure* of the problem or the input into account
+* We like structure: structure can be exploited
+* Generally brute force "backtracking" is not necessarily better asymptotically
+* But in practice it can save a lot of work and make "exponential" algorithms more feasible
+* General technique:
+  * You iteratively (recursively) build a partial solution until you reach a feasible solution or you reach a "dead end" at which point you backtrack
+  * Walking a maze: you keep track of where you've been (breadcrumbs)
+  * Chess: computer "AI" player will simply "look ahead" and choose the best possible move
+
+### 0-1 Knapsack Problem
+
+* Given:
+  * A collection of items $A = \{a_1, \ldots, a_n\}$
+  * Each item has a *weight* $w_i$
+  * Each item has a *value* $v_i$
+  * Our knapsack has a maximum capacity of $K$
+  * Want to steal as much as possible subject to our weight capacity
+  * Want to maximize the sum of the values of all items we take
+  * BUT, the sum of all weights of items we take cannot exceed $K$
+* Greedy approach is not necessarily optimal
+* Attempting to max out your weight capacity is not necessarily optimal
+* Combinatorial approach: generate every possible combination (subset)
+  * If the sum of weights exceeds $K$ it is not a *feasible* solution
+  * Among all feasible solutions, you choose the best one (maximum sum of values)
+* Backtracking solution:
+  * Iteratively/recursively create all possible subsets
+  *
+
+```python
+
+import copy
+
+count = 0
+
+def subsetTree(set, subset, k):
+  """
+  set is the original set
+  subset is the current subset consisting of some of
+  the elements a_1 thru a_k
+  k is the index of the elements
+
+  going to make recursive calls to generate all other
+  subsets
+  """
+  global count
+  n = len(set)
+  if k == n:
+    return
+  for j in range(k+1, n):
+    #add set[j] to the subset and
+    newSubset = copy.deepcopy(subset)
+    newSubset.append(set[j])
+    # "process" the current subset...
+    print(newSubset)
+    count += 1
+    # recurse
+    subsetTree(set, newSubset, j)
+    #alternative: subset.pop()
+
+n = 4
+set = list(range(n))
+subset = []
+subsetTree(set, subset, -1)
+print(count)
+```
+
+## Other Problems and Brute Force Solutions
+
+* Permutations with repetition
+  * Example: $\{A, G, C, T\}$
+  * Generate permutations of these with repetition of length 10
+  * In general, there are $4^k$ possible permutations with repetition of length $k$ of 4 elements
+  * More generally:
+  $$n^k$$
+  possible permutations with repetition of $n$ elements of length $k$
+* Set partitions?
+  * Given a set $\{a, b, c\}$ how many partitions are there?
+  * Partitioning is a set of all elements divided into subsets
+
+
 ```text
 
 
