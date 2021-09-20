@@ -59,7 +59,7 @@ Input: a set of points $S$, presorted with respect to the x coordinate
 1. Partition $S$ into two roughly equally sized arrays/lists, $L$ and $R$
 2. Recursively find the two closest points (p, q) in $L$ and (r, s) in $R$
 3. Choose the closest pair between (p, q) and (r, s), call it (p, q) with distance $\delta$
-4. Find the median x between the two Insertions
+4. Find the median x-value ($m$) between the two partitions
 5. Build a subset of $S$ whose x values are in $[m - \delta, m + \delta]$
   * You need to use binary search to find these slice cutoffs: using a linear search gives you $O(n)$ behavior and overall a quadratic algorithm
   * Tip: make sure you include ALL points that may have equal $x$ values

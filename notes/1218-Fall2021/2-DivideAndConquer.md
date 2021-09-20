@@ -149,6 +149,32 @@ $$a \equiv r\pmod{m} \iff a = mk + r$$
 * Decryption:
   $$d_k(y) = y^b \bmod n$$
 
+### Closest Pair Revisited
+
+* Given $n$ points in the Euclidean plane, we want to find the two closest pair of points
+* Brute Force: you try all pairs, ${n \choose 2} \in O(n^2)$
+* Naive divide & conquer:
+  * Divide the points two sets into 2 sets
+  * Conquer: recursively finding the two closest pairs
+  * BUT when we "come back" from the recursion, we still have 2 pairs of points that are the closest...
+
+Input: a set of points $S$, presorted with respect to the x coordinates
+
+0: Base case: if the size of $S$ is "small enough" then use brute force (generate all pairs) to solve the problem, return the pair/distance of the two closest points
+1. Partition $S$ into two roughly equally sized lists of points, $L, R$ via their x-coordinates
+2. Recursively find the two closest points $(p,q)$ in the left, $(r,s)$ in the right
+3. Choose teh closest pair between $(p,q), (r, s)$, WLOG suppose this is $(p,q)$ with a distance $\delta$
+4. Find the median $x$-value (call it $m$) between the two partitions
+5. Build a subset of $S$ whose $x$ values are in $[m - \delta, m + \delta]$
+  * You *need* to or *should* use binary search to find these slice cutoffs: using linear search gives you $O(n)$ behavior and a quadratic algorithm
+  * Tip: it may help to keep track of a left slice and a right slice separately
+  * Tip: make sure you include ALL points with an equal $x$ value!
+6. For each point $p$ in the left slice: compute the distance to each potential point in the right slice, if you find a closer pair, update your closest pair
+  * Careful: you cannot (or should not) compare it to *every* point in the right slice otherwise it would be $O(n)$ and over all a quadratic algorithm!
+  * Solution A: sort the right slice with respect to their $y$ coordinates, use binary search to find the "cutoffs"
+  $[p.y-\delta, p.y + \delta]$
+  * Solution B: so avoid resorting by sorting once and maintaining 2 lists, by-X and by-Y; when you split the lists, you split the Y list too
+
 ```text
 
 
