@@ -175,7 +175,30 @@ Input: a set of points $S$, presorted with respect to the x coordinates
   $[p.y-\delta, p.y + \delta]$
   * Solution B: so avoid resorting by sorting once and maintaining 2 lists, by-X and by-Y; when you split the lists, you split the Y list too
 
+## "Better" Multiplication
+
+* Problem: given two $n$-digit integers $a, b$, compute $a \times b$
+* The naive "grade school" multiplication method makes $O(n^2)$ single digit multiplications
+* Is there a "better" way?
+* Toom Cook: 1963 $O(n^{1.465})$
+* Schonhage-Strassen (1968, FFT): $O(n\log{n}\log{\log{n})})$
+* Furer (2007): $O(n\log{n}\cdot2^{\log^*{n}})$
+* 2019: reached optimality: $O(n\log{n})$
+
+## Strassen's Matrix Multiplication
+
+* Matrix multiplication in sub-$O(n^3)$ time
+
+## Related: Using Matrices to Solve Linear Systems
+
+* Consider a linear system in $n$ variables...
+
+
+
+
 ```text
+
+
 
 
 
