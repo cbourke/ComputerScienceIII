@@ -64,6 +64,8 @@ Motivating review: Huffman coding
 * An AVL Tree is a BST such that the balance factor of all nodes is -1, 0, or +1
 * due to the balance, we get a guarantee of a depth that is $O(\log{n})$
 * An AVL Tree guarantees this property by using *rotations*
+https://visualgo.net/en
+
 
 ## B-Trees
 
@@ -80,7 +82,9 @@ Motivating review: Huffman coding
 * Insertion:
   * Always done in a leaf
   * If it is a 2-node, it becomes a 3-node
-  * If it is a 3-node, you promote the middle key element up, potentially overflowing hte parent
+  * If it is a 3-node, you promote the middle key element up, potentially overflowing the parent
+* Depth:
+  $$\sum_{i=0}^n x^i = \frac{x^{n+1}-1}{x-1}$$
 
 ## Hashing
 
