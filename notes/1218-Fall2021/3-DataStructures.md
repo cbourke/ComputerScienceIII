@@ -99,12 +99,46 @@
   * If it is a 2-node, it becomes a 3-node
   * If it is a 3-node, you promote the middle key element up, potentially overflowing the parent
 * Balanced BSTs: guaranteed $O(\log{n})$ insertion, search, deletion
+* Depth Analysis; recall the following:
+  $$\sum_{i=0}^n x^i = \frac{x^{n+1}-1}{x-1}$$
 
 ## Hashing
 
 * Offers *potential* for *amortized* constant-time operations
+* Hash-based data structures (sets, hash tables, maps), off $O(1)$ *amortized* operations
 
-```c
+Basic Ideas
+
+* Elements are stored in a contiguous fixed-sized array
+* provides easy "Free" random access to elements based on their index
+* The actual index/location of each element $x$ is determined by using a hash function $h(x)$
+* As long as the hash function is easy (*eficient*) to compute, the basic operations: retrieve, insert, destroy are all efficient
+* Generally you use a *key* instead of the actual object: it is sufficient to consider integers
+  * Generally you can map an object or its state to an integer
+  * Use that "hash code" to run it through a hash function that only works on integers
+* Our actual *hash function* will map
+$$h: \mathbb{Z} \rightarrow \mathbb{Z}_m$$
+* $\mathbb{Z}_m = \{0, 1, 2, ..., m-1\}$
+* the result is used as an index to map it to an actual array index
+* Array is of size $m$
+
+## Collision Resolutions
+
+* When two elements map to the same index, it is known as a *collision*
+
+### Open Addressing
+
+* If a collision occurs, you can simply map it to a second value in another location (index)
+* Linear Probing: go to the adjacent cell until you find an available (empty) one
+* Quadratic Probing: use a quadratic function to "probe" for another location/index
+* You can use a secondary hash function for collisions
+* Etc.
+
+```text
+
+
+
+
 
 
 
