@@ -133,6 +133,41 @@ $$h: \mathbb{Z} \rightarrow \mathbb{Z}_m$$
 * Quadratic Probing: use a quadratic function to "probe" for another location/index
 * You can use a secondary hash function for collisions
 * Etc.
+* You generally "wrap" around to the start of the array when you reach the end
+* You could also use a secondary hash function to "rehash" it
+* Other considerations
+  * If the hash table is full, you need to deal with that somehow
+  * If you want to support deletion of elements, you will need to keep track of which cells have been used before
+  * As the table gets fuller and fuller, collisions are much more likely: all operations become inefficient, O(n) for searching, insertion, deletion
+
+## Chaining:
+
+* Instead of probing for a new available cell, you store multiple elements at the same location/index
+* To facilitate this, you establish *another* data structure: linked list or a tree, etc.
+* To store multiple elements, you need another data structure
+* Each cell is a reference to another data structure such as a linked list or a Balanced BST
+* Instead of probing, the element is added to the secondary data structure
+* But if you insert a lot of things this just makes it some fraction of $O(n)$ or $O(\log{n})$
+
+## Reashing
+
+* At some point the performance will degrade: with more and more elements, all the cells become full or dirty or the secondary data structures become "large"
+* To resolve this, we rebuild a *new* larger hash table with a new, different hash function
+* We *rehash* every single element to this new table: $O(n)$ BUT it is a one-time/infrequent cost
+* Rehashing to a new larger table does not guarantee no collisions
+* BUT over the lifetime of the data structure, the *amortized* cost of operations (when you take the average cost) is nearly $O(1)$
+* You generally keep track of a *load factor*: a value used to determine when you rehash
+  * $n / m$ where $n$ is the number of elements in the table, $m$ is the size of the array (table)
+  * Ex: $n/m$ = .75 (ie the table is 75% full)
+* This provides a tunable tradeoff with hash tables:
+  * The trade off is time vs space (CPU time vs memory)
+  * Small table = more collisions = slower access/insert/delete = less wasted space
+  * Large table = fewer collisions = faster operations = more wasted or used memory
+
+
+
+
+
 
 ```text
 
