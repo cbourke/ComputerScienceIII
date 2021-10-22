@@ -138,7 +138,7 @@
 
 * A dynamic programming algorithm
 * It produces the path/distance for *all pairs*
-* It keeps track of two matrices: one for the minimum weighted distance and one for the "successor" vertex 
+* It keeps track of two matrices: one for the minimum weighted distance and one for the "successor" vertex
 
 
 ```text

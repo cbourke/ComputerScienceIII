@@ -52,7 +52,45 @@
 * In a directed graph, all 4 types of edges are possible
 * Complexity: $O(n)$ or $O(m)$ or (as a catch-all, $O(n+m)$)
 
+#### Breadth First Search
 
+* Explores each vertex that is "closest" to the initial vertex first
+* Closest = *distance* (number of edges), not with respect to any edges weights
+
+* Observations
+  * In a BFS tree for undirected graphs, no back/forward edges are possible
+  * In a directed graph, back edges are possible, but forward edges are not
+  * Both have potential cross edges: edges that connect vertices in the BFS tree that are not ancestors or descendants
+  * BFS may need to be restarted if it is a disconnected graph or if it is a directed graph such that some vertices are reachable but others are not
+  * Cross edges in a BFS tree connect cousins/aunts but never descednents/ancestors
+
+* Analysis
+
+* Elementary operations:
+  * Processing a vertex (likely the most expensive): $n = O(n)$
+  * Traversing an edge ($2m = O(m)$)
+  * Examining a vertex (black/gray/white): $2m = O(m)$
+  * Overall if you want to capture all work: $O(n + m)$
+
+## Applications
+
+### Connectivity
+
+* Given a graph $G=(V,E)$ and (say) two vertices, $x, y \in V$ determine if $x$ and $y$ are "connected"
+  * Does there exist a (undirected/directed) path from $x$ to $y$?
+  $$p : x \rightsquigarrow y $$
+  * Problems that are posed such that there is a yes/no answer (true/false, 1/0, etc.) are *decision versions*
+  * Problems that require the output of an actual solution are *functional versions*: it maps your input to an output that is a "witness" or "certificate" to the yes/no question
+  * Given $G, x, y$: if there is a path from $x$ to $y$ output it, if not, output some flag value
+  * Problems that require not only a solution, but the *best* solution are *optimization versions*
+  * shortest path or the longest path or the least weighted path or the most weighted path
+  * What you are trying to optimize is an "objective function"
+* Potential Solutions (undirected)
+  * Run DFS: Start at $x$, if you ever see $y$, stop answer yes
+  * If DFS has to restart to discover $y$, the answer is no
+  * BFS: same criteria
+* Potential Solutions (directed)
+  * Run DFS starting at $x$, if you ever encounter $y$ without starting over: yes
 
 ```text
 
