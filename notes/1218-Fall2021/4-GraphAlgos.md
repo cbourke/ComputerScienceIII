@@ -85,12 +85,60 @@
   * Problems that require not only a solution, but the *best* solution are *optimization versions*
   * shortest path or the longest path or the least weighted path or the most weighted path
   * What you are trying to optimize is an "objective function"
+  * *counting versions*: how many paths exist between those vertices
 * Potential Solutions (undirected)
   * Run DFS: Start at $x$, if you ever see $y$, stop answer yes
   * If DFS has to restart to discover $y$, the answer is no
   * BFS: same criteria
 * Potential Solutions (directed)
   * Run DFS starting at $x$, if you ever encounter $y$ without starting over: yes
+
+#### Cycle Detection
+
+* Given a graph $G$, does it contain a cycle or not (ie is it acyclic, ie a tree)
+  * Run DFS: if you ever encounter a gray vertex: implies a back edge (undirected) implies a cycle
+  * Run BFS: if you ever encounter a gray vertex: implies a cross edge, implies a cycle
+  * Directed: 1) does there exist a path $x \rightsquigarrow y$ AND does there exist a path $y \rightsquigarrow x$: if yes then there is a directed cycle: $O(n^2(n+m))$
+
+#### Bipartite Testing
+
+* A graph $G$ is bipartite if its vertices can be partitioned into two sets $L, R$ such that edges only connect between the two sets
+* Given a graph $G$, is it bipartite or not?
+* Obsevation: $G$ is bipartite iff $G$ contains no odd length cycles
+* Perform a DFS and keep track of alternating colors: red/blue; if a red vertex is adjacent to a red vertex (or a blue to a blue), NOT bipartite
+* Condensation Graph
+  * A lot of graph "equivalencies": isomorphisms, homomorphisms, homeomorphisms, etc.
+  * Goal: take a "large" directed graph and "condense" it into a smaller graph, but preserving connectivity
+  * Let $G$ be a directed graph; let $x, y$ be vertices in $G$.  We say that $x, y$ are strongly connected if there exists path from $x$ to $y$ AND from $y$ to $x$
+  * A condensation graph collapses a large complex graph into its strongly connected components
+  * A component is a subset of vertices each of which is pairwise strongly connected
+  * You start with a directed graph:
+    1. Perform a DFS noting the finish times
+    2. You compute the *transpose* graph (you simply reverse the edge orientation)
+    3. You perform another DFS in order of finish time; each time you start over you create a new node (this indicates a strongly connected component)
+  * Result: a DAG = Directed Acyclic Graph
+  * Removes a lot of "redundant" information
+
+## Minimum Spanning Tree
+
+* Given an undirected (connected) weighted graph (edges have weights) we want to create a *spanning tree* of minimal total weight
+* A spanning tree is simply a tree (subset of edges with the same vertices) that "spans" all the vertices: all vertices are connected by some path
+* Many spanning trees may exist, you want to find the "best" (minimally weighted) one
+* There may be more than one!
+
+### Kruskal's Algorithm
+
+* Greedy Algorithm: it makes *locally optimal choices* which lead to a *globally* optimal solution
+* Basic idea: you consider edges in increasing order of weight, adding them to your tree/forest as long as they do not induce a cycle
+
+#### Disjoint Set Data Structure
+
+* Purpose: we maintain a collection of *disjoint* sets of elements, then eventually we *combine* or Union them all together
+* Sets are represented as trees; BUT: there may be an arbitrary number of children and we only maintain references to the *parent* node
+* Each set is identified with a *representative*: the root of the tree
+
+* Operations
+
 
 ```text
 
