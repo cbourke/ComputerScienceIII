@@ -137,8 +137,29 @@
 * Sets are represented as trees; BUT: there may be an arbitrary number of children and we only maintain references to the *parent* node
 * Each set is identified with a *representative*: the root of the tree
 
-* Operations
+**Operations**
 
+* Initialize(u): creates a single node "tree" where
+  * $u$ is the representative
+  * $u$ is checked to make sure it is not part of any other tree
+  * We will also maintain a reference to each node to provide random access
+* Find-Set(u): returns the *representative* of the set containing $u$  
+* SameSet(u, v): returns true if both $u$ and $v$ are in the same set; ie if they have the same representative: two calls to Find-Set
+* Union(u, v): combines the set containing $u$ and the set containing $v$ into one new set
+  * Essential details:
+    - When union-ing two sets we always attach the smaller (shallower) of two trees to the larger
+    - Optimization step: every operation that traverses up the tree will also collapse it at the same time
+* The efficiency depends on the height of the trees; at most the height is $O(\log{n})$
+* Overall, the *amortized* cost of searching, combining, etc. is $O(n)$
+
+## Prim's Algorithm
+
+* Works by starting at a vertex and "building" a connected tree outward
+* Vertices are separated into three sets:
+  * Tree vertices: vertices that have been added to the "intermediate" MST
+  * Fringe vertices: vertices that have been "seen" (ie are connected to tree vertices)
+  * Unseen vertices: vertices that are not connected to the tree yet
+* Consider vertices on the the "fringe": which one do you add next?
 
 ```text
 
