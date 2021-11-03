@@ -161,6 +161,50 @@
   * Unseen vertices: vertices that are not connected to the tree yet
 * Consider vertices on the the "fringe": which one do you add next?
 
+### Psuedocode
+
+### Efficiency
+
+* Observe: we store triples of vertices, so at most $n$ elements are stored in the heap
+* Updating the priority of a single element in a heap is at most $O(\log{n})$
+* Observation: the size of the heap decreases with each iteration
+* Number iterations: $n$
+* getMin means we do $O(\log{n})$ getMin calls but $n$ times: putting stuff in/taking stuff out in total is $O(n\log{n})$
+* Also: we do priority updates
+* If done with an efficient heap implementation with "Free" access to heap nodes: find the node is constant, but updating its priority is: $O(\log{n})$
+* How many total update priority operations do we do?  At most $2m = 2|E|$
+* The complexity wrt update priority operations is $O(m\log{n})$
+* In total we have:
+  $$n\log{n} + m\log{n} = O(m\log{n})$$
+
+## Shortest Distance Algorithms
+
+### Dijkstra's Algorithm
+
+* Given a graph $G=(V,E)$ (directed or undirected) with edge weights and a single source vertex $s$: output all the shortest distance (weighted) paths from $s$ to all other vertices
+* Essentially the same algorithm as Prim's but with different criteria
+* We keep track of a triple: vertex, the distance to the vertex (shortest one so far) and the *predecessor* vertex (so we can rebuild the shortest distance path)
+* Computing paths: from the destination, trace the path back to the source
+
+## Floyd-Warshall Algorithm
+
+* All pairs shortest path algorithm
+* it produces a path/distance for *all pairs* rather than just a single source
+* It keeps track of two matrices:
+  * The minimum weight (so far)
+  * A successor matrix
+
+```java
+Set<String> s = new Set<>();
+s.add("a");
+s.add("b");
+s.add(s);//compiler error
+if(s.contains(s)) {
+  System.out.println("how?");
+}
+
+```
+
 ```text
 
 
