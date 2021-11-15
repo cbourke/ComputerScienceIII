@@ -51,6 +51,18 @@ $${n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}$$
   * This algorithm is "pseudolinear": the analysis is *hiding* the true complexity if you ignore $W$
   * The 0-1 knapsack problem is $\mathsf{NP}$-complete: no polynomial time algorithm is known for it (or even though to exist)
 
+## Optimal Binary Search Trees (OBSTs)
+
+* Given a set of keys and a probability distribution of searching those keys, create the "optimal" binary search tree
+* Keys are still *ordered* and the BST property must be maintained
+* Don't want to necessarily *balance* the tree: want to optimize for searches
+* Optimization: minimize the number of *expected* key comparisons
+
+Basic Idea
+
+* Keys: $k_1, \ldots, k_n$ with probabilities $p_1, \ldots, p_n$
+* Let $C_{i,j}$ be the optimal BST for keys $k_i, \ldots, k_j$...
+
 
 ```text
 
