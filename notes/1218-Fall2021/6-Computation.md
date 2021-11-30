@@ -82,15 +82,77 @@ $$L = \{ \langle G\rangle | \textrm{$G$ is an encoding of an acyclic graph}\}$$
 
 * A Turing Machine decides a language $L$ if and only if it halts on all inputs and accepts/rejects if $x \in L$/$x\not\in L$
   * A TM only decides a language if it *halts on all inputs*!!!
-
 * Are Turing Machines = Computers = Algorithms?
 * Can Algorithms solve any problem? => Can Turing Machines decide any language?
 * Answer: NO
 * The Church-Turing Thesis: "Turing Machines = Algorithms"
-* You can come up with problems (actual real, practical problems) such that no turing machine decides that language!
+* You can come up with problems (actual real, practical problems) such that no Turing machine decides that language!
+
+### Diagonalization
+
+* Using Cantor's Diagonalization proof we can show that TMs are *countable* but languages are *uncountable*
+
+### Halting problem
+
+* Halting Problem: given a TM $M$ and an input $x$ does $M(x)$ halt?
+* Claim: no TM exists to decide the halting problem
+
+## Computational Complexity
+
+* *Given* an algorithm we can analyze its complexity (Big-O): $O(1), O(n), O(n^2)$ (all polynomial), $O(2^n)$ (exponential), etc.
+* For Turing Machines:
+  * In a TM "time" is measured by the number of transitions from one state to the next until you halt (and accept or reject)
+  * In a TM "memory" is the number of tape cells used in the work tape
+  * We can bound both time and memory by functions; $T(n), M(n)$
+  * The size of the input, $n$ is the number of bits/symbols in the input tape
+* You can bound the number of transitions by some function,
+  $$T(n) \in O(f(n))$$
+* This allows you to define *complexity classes*: $\mathsf{P}$ is *deterministic polynomial time*
+* The complexity class $\mathsf{P}$ consists of all *problems* such that there is a deterministic Turing Machine that runs in polynomial time with respect to any input
+  * $\mathsf{P}$ is a set of *problems* ie a set of *languages* NOT a set of algorithms
+  * To show that a problem is in $\mathsf{P}$ you need to come up with a poly-time algorithm that solves/decides that problem!
+  * Complexity classes are classes of PROBLEMS (langages) not algorithms
+  * The existence of an algorithm *shows* that a problem is in $\mathsf{P}$ but..
+  * If we didn't have any algorithm for a problem, we wouldn't know what complexity class it is in
+  * Just because we don't know a polytime algorithm for a problem, doesn't mean it is *not* in $\mathsf{P}$!
+  * Examples: finding the shortest path in a graph, computing a MST, sorting, etc. are all *problems* in P
+  * To show that a problem is in $\mathsf{P}$ all you need to do is come up with an algorithm that runs in polynomial time
+  * What is determinism?   ANy computation that has the same result on the same input is determinsitic
+
+### Nondeterminisic Computation
+
+* This is not "randommess", it is not a "real" computational model
+* Nondeterminism is a *theoretical* model of computation
+* It works in two phases:
+  * Guessing phase: it guesses a solution to a given problem (nondetermistic phase)
+  * Verification phase: given the guess, it verifies if it is a "valid" solution or not (if it is, it is known as a "certificate" or "witness")
+  * The overall machine accepts if *any* possible computational branch/guess is valid
+* Having a nondeterministic polynomial time Turning machine (algorithm) allows us to define $\mathsf{NP}$: nondeterministic polynomial time
+* It consists of all problems such that there is a nondeterministic algorithm that solves it in polynomial time
+
+### Comparison
+
+* What is the relation between $\mathsf{P}$ and $\mathsf{NP}$?
+* Trivially, by definition:
+  $$\mathsf{P} \subseteq \mathsf{NP}$$
+* Any problem that can be solved in deterministic polynomial time can be solved in nondeterministic polytime by simply ignoring the nondeterminisitc phase
+* Observation: if you use an *exponential* amount of time, you can always simulate a polynomial amount of nondeterminism:
+  $$\mathsf{NP} \subseteq \mathsf{EXP}$$
+* The million dollar question:
+$$\mathsf{P} = \mathsf{NP}?$$
+* Most think not:
+  $$\mathsf{P} \neq \mathsf{NP}$$
+* Ie there are problems that are *not solvable* by *any* deterministic polytime algorithms!
+* Are there problems that are inherently more difficult than other problems?
+* To answer this question, we need a framework for comparing the relative difficulty of problems
+* We already have a framework to compare the relative complexity of *algorithms*
+
 
 
 ```text
+
+
+
 
 
 
