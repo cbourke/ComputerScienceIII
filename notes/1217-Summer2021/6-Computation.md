@@ -131,7 +131,7 @@ $$\mathsf{P} \subseteq \mathsf{NP}$$
 ### Reductions
 
 * Goal: we want to establish the relative complexity of problems (NOT algorithms)
-* RElative complexity of algorithms can be done with big-O analysis
+* Relative complexity of algorithms can be done with big-O analysis
 * We want to deal with *problems* (languages), not algorithms
 * In general: you can use or adopt a (supposed) solution for one problem $B$ to solve another problem $A$
   * $A$ is no more complex than $B$
@@ -186,7 +186,7 @@ if there exists a function $f$ such that
     - they are in different clauses and are
     - *consistent*: they are not the negation of each other
 4. Prove the reduction is correct: formula is satisfiable if and only if $G$ has a clique of size $k$
-5. Show the reduction can be computed in determinisitic polynomial time:
+5. Show the reduction can be computed in deterministic polynomial time:
   * outputting $3k$ vertices
   * outputting at most $3k \choose 2$ edges
   * both are polynomial in $k$ the number of clauses which is bounded by $n$, the number of variables

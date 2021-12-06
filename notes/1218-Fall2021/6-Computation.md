@@ -147,9 +147,62 @@ $$\mathsf{P} = \mathsf{NP}?$$
 * To answer this question, we need a framework for comparing the relative difficulty of problems
 * We already have a framework to compare the relative complexity of *algorithms*
 
+### Reductions
 
+
+* Goal: we want to establish the relative complexity of problems (NOT algorithms)
+* RElative complexity of algorithms can be done with big-O analysis
+* We want to deal with *problems* (languages), not algorithms
+* In general: you can use or adopt a (supposed) solution for one problem $B$ to solve another problem $A$
+  * $A$ is no more complex than $B$
+  * $A$ is no harder to solve than $B$
+  * $B$ is just as complex (or even more complex or "hard to solve") than $A$
+  * We are NOT making $A$ simpler
+  * We are "reducing" $A$ to $B$
+  * A possible new interpretation: we are "reducing the amount of work" we need to solve $A$ by using an existing solution for $B$
+  * "I don't know how to solve $A$ but if I know how to solve $B$ I could solve $A$ so I've reduced the problem of solving $A$ to the problem of solving $B$ "
+  * $A \leq_{P} B$
+
+### Polynomial Time Mapping Reductions
+
+* Ultimately we want to map input instances of one problem to input instances of another problem
+* We can only use the power of polynomial time (deterministic) to perform our reductions
+* Why?  If we used anything more powerful, we'd be cheating.
+* Definition: Let $P_1$ and $P_2$ be problems.  We say that $P_1$ reduces to $P_2$ and write
+  $$P_1 \leq_{\mathsf{P}} P_2$$
+if there exists a function $f$ such that
+  * $f$ maps all yes instances of $P_1$ to yes instances of $P_2$ (no instances likewise)
+  * and $f$ is computable by a deterministic polynomial time algorithm
+* A problem is in the complexity class $\mathsf{NP}$ if it is decidable by a nondeterministic polynomial time TM
+* A problem is $\mathsf{NP}$-complete if *every problem* in $\mathsf{NP}$ reduces to it
+* If we found ONE algorithm that solved an $\mathsf{NP}$-complete problem and it ran in polynomial time, then...
+  $$\mathsf{P} = \mathsf{NP}$$
+* Fact: (Cook/Levin): the SAT problem is $\mathsf{NP}$-complete
+* Given a problem: to establish that it is $\mathsf{NP}$-complete you only need to show a reduction **from** a known $\mathsf{NP}$-complete problem to it
+
+### Proving $\mathsf{NP}$-completeness
+
+* 5 step process: you want to show that a problem $P$ is $\mathsf{NP}$-complete
+
+1. Show that $P$ is in $\mathsf{NP}$: by coming up with a nondeterministic polytime algorithm for it
+2. You select a known $\mathsf{NP}$-complete problem to reduce *to* your problem $P$
+  * Going *from* the known $\mathsf{NP}$-complete problem
+  * Going *to* your problem!
+3. You come up with a mapping reduction that maps yes instances of the $\mathsf{NP}$-complete problem to yes instances of your problem $P$
+4. You prove your reduction is correct (it preserves solutions)
+5. You show that your reduction is computable in deterministic polynomial time
+
+### Examples
+
+#### Reduction from SAT to Clique
+
+* Mapping reduction review
+* Clique problem: given a graph $G$
+* Mapping overview
 
 ```text
+
+
 
 
 
