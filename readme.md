@@ -12,16 +12,18 @@ the University of Nebraska-Lincoln
 ## Lecture Notes
 
 My lecture note set is available on BitBucket:
-https://bitbucket.org/chrisbourke/computerscienceiii/src/master/ComputerScienceThree.pdf 
+https://bitbucket.org/chrisbourke/computerscienceiii/src/master/ComputerScienceThree.pdf
 
 ## Course Offerings
 
+### Fall 2022 (Honors)
+
+(starting Monday, August 22, 2022)
+
 ### Fall 2021 (Honors)
 
-(starting Monday, August 23rd, 2021)
-
 - Course Link: https://canvas.unl.edu/courses/114259
-- Lectures: To Come
+- Lectures: https://www.youtube.com/playlist?list=PL4IH6CVPpTZXVukWxmJHMFAUb6qwr3lBD
 
 ### Summer 2021
 
