@@ -20,6 +20,9 @@ https://bitbucket.org/chrisbourke/computerscienceiii/src/master/ComputerScienceT
 
 (starting Monday, August 22, 2022)
 
+- Course Link: https://canvas.unl.edu/courses/136571
+- Lectures: https://www.youtube.com/playlist?list=PL4IH6CVPpTZWXnPzeWZuLG_dGvF4jhPQG
+
 ### Fall 2021 (Honors)
 
 - Course Link: https://canvas.unl.edu/courses/114259

@@ -1,6 +1,6 @@
 # Computer Science III
 
-### CSCE 310H - Syllabus - Fall 2021
+### CSCE 310H - Syllabus - Fall 2022
  [Department of Computer Science & Engineering](https://cse.unl.edu/)  
  [College of Engineering](https://engineering.unl.edu/)  
  [University of Nebraska Lincoln](https://unl.edu/)  
@@ -67,7 +67,7 @@ See Canvas
 
 # Course Delivery
 
-This course is delivered in an asynchronous *hybrid* manner:
+This course is delivered in an asynchronous *hybrid* mode:
 
 -   Live lectures are livestreamed via YouTube
     (<https://www.youtube.com/c/ChrisBourkeUNL/live>) during the
@@ -82,38 +82,11 @@ This course is delivered in an asynchronous *hybrid* manner:
 -   Written solutions must be submitted through canvas as PDF files,
     no hardcopies will be accepted
 
+-   Programs and other artifacts are to be submitted through  
+    webhandin (<https://cse.unl.edu/handin>) and can be graded using
+    the webgrader (<https://cse.unl.edu/~cse310h/grade>)
+
 -   Office hours will be held online via zoom
-
-## COVID Considerations
-
-Out of respect for faculty and staff, out of respect for the
-Learning Assistants, and out of respect for your fellow students
-and most especially yourself, you should make sure you are fully
-vaccinated if you plan to attend lecture in person.  Several
-vaccines are widely available, highly effective and backed by
-sound science.  The good majority of adults have
-been vaccinated and you should be one of them.  UNL has provided
-opportunities to receive a vaccine (free of charge); please consider doing this
-as soon as possible.  More information can be found here:
-https://covid19.unl.edu/vaccination-information.
-
-Everyone is required and expected to follow all health and safety
-guidelines published by the CDC, healthcare officials and the
-University of Nebraska--Lincoln.  If you are not fully vaccinated and
-still decide to attend in-person lecture, lab or hack sessions,
-you will be ***required*** to wear a mask.  If you are fully
-vaccinated, you are still **strongly recommended** to wear a mask
-given the limited social distancing and disappointingly low
-vaccination rates among college age groups in Nebraska.  
-
-If you feel ill or have had exposure to COVID-19, you
-**should not attend in-person** and instead utilize the online
-opportunities we have provided.  Those who violate the testing
-policies or receive a positive test may not be granted access to
-University buildings and so you may need to attend remotely.  Getting
-vaccinated as soon as you can greatly improves not only your health
-risks but also greatly reduces the chance that your access will be
-restricted.  
 
 # Accommodations for Students with Disabilities
 
@@ -189,7 +162,7 @@ submissions work on the webgrader.
 
 There will be no exams for this course.  The weekly assignments are
 challenging and substantial and are a much better assessment of your
-ability to learn the material than summative exams.
+understanding of the material than summative exams.
 
 ## Grading Policy
 
