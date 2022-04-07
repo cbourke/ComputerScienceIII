@@ -76,3 +76,4 @@ Some free courses to help you learn:
 
 - [Code Academy](https://www.codecademy.com/learn/learn-python-3)
 - [Coursera](https://www.coursera.org/learn/python)
+- Also: [Getting Started](https://www.youtube.com/watch?v=YnL9vAFphmE)
