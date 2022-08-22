@@ -1,5 +1,5 @@
 import sys
 
 print("Hello World!")
-print("You passed:")
+print("You passed arguments: ")
 print(str(sys.argv))

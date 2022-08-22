@@ -8,6 +8,7 @@
 # lists all the installe versions and
 #   pyenv which python3.7
 # (for example) to list the full path to a particular
-# version.  You'll likely be okay simply using python3
+# version.  You'll likely be okay simply using python
+# (which is python3 by default)
 # for all of your programs as in the following example.
-python3 hello.py "$@"
+python hello.py "$@"
