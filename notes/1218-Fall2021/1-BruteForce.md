@@ -25,7 +25,7 @@ the Euclidean plane, determine which pair is the closest
   * Start with $\{1, 2, 3, \ldots, k\}$
   * Assume that you have a "current" combination, $a_1, a_2, \ldots, a_k$
   * Want to generate the *next* $k$ combination
-  * Locate the last element $a_i$ such that $a_i \neq n -k + i$
+  * Locate the last element $a_i$ such that $a_i \neq n - k + i$
   * Replace $a_i$ with $a_i + 1$
   * Replace each $a_j$ with $a_i + j - i$ for all $j = i+1, i+2, ... k$
 

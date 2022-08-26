@@ -18,3 +18,8 @@
   * Basic data structures: stacks, queues, lists, binary search trees, graphs
   * Basic proofs and logic
   * Basic combinatorics
+
+# Review & Motivating Example
+
+* given a set of points $\{(x_1, y_1), \ldots, (x_n, y_n)\}$ in
+  the Euclidean plane, determine which pair is the closest
