@@ -204,11 +204,121 @@ print(decryptedNumber)
 decryptedBytes = decryptedNumber.to_bytes(256, "big")
 decryptedText = decryptedBytes.decode("UTF-8", errors='ignore')
 print(decryptedText)
-
-
-
-
 ```
+
+
+## Closest Pair Revisited
+
+* Brute Force solution: $O(n^2)$
+* Given $n$ points in the Euclidean plane, we want to find the two closest pair of points
+* Naive divide & conquer:
+  * Divide the points two sets into 2 sets
+  * Conquer: recursively finding the two closest pairs
+  * BUT when we "come back" from the recursion, we still have 2 pairs of points that are the closest...
+
+Input: a set of points $S$, presorted with respect to the x coordinates
+
+0: Base case: if the size of $S$ is "small enough" then use brute force (generate all pairs) to solve the problem, return the pair/distance of the two closest points
+1. Partition $S$ into two roughly equally sized lists of points, $L, R$ via their x-coordinates
+2. Recursively find the two closest points $(p,q)$ in the left, $(r,s)$ in the right
+3. Choose the closest pair between $(p,q), (r, s)$, WLOG suppose this is $(p,q)$ with a distance $\delta$
+4. Find the median $x$-value (call it $m$) between the two partitions
+5. Build a subset of $S$ whose $x$ values are in $[m - \delta, m + \delta]$
+6. For each point $p$ in the left slice: compute the distance to each potential point in the right slice, if you find a closer pair, update your closest pair
+  * Careful: you cannot (or should not) compare it to *every* point in the right slice otherwise it would be $O(n)$ and over all a quadratic algorithm!
+
+### Tools & Tips
+
+* We need a couple of binary search implementations:
+  * Given a set of points (or numbers) and a key, find an element matching that key OR in the event that no such element exists, find where it "should" be...
+  * Given a set of points (or numbers) and a *range* (low, high), find indices `(i,j)` such that all values in the set $a[i]..a[j]$ lie within the range
+  * To create a left/right slice, you can use the `rangeBinarySearch` to get all points whose `x` coordinate lie within a range
+  * You can reuse the same idea/binary search to limit in the `y` axis: BUT they are not necessarily sorted with respect to the `y` coordinates
+    * Solution: resort values in the right slice by their `y` coordinates and repeat the binary search to limit in the `y`-direction (for each point): $O(n\log(n))$
+    * Solution (not recommended): maintain two lists before the algorithm begins, one sorted wrt $x$, one sorted wrt $y$; then when you build a left/right slice, you also limit the second subarray (the one sorted wrt the $y$-coordinate, $O(n)$)
+
+```python
+
+
+def binarySearch(arr, key):
+    """
+    Performs a binary search on the given list (arr) which is assumed
+    to be sorted for the given key element.
+
+    If such an element is found, it returns *an* index at which it
+    exists.  If no such key element is found, returns an index at which
+    it *would* appear if it were to be inserted in order.
+
+    for example,
+    [4, 6, 7, 8, 8, 8, 8, 10, 12, 12, 20]
+    - a search for 7 would return 2
+    - a search for 8 would return 3, 4, 5, or 6
+    - a search for 2 would return 0
+    - a search for 4 would return 0
+    - a search for 20 would return 10
+    - a search for 25 would return 11
+    - a search for 9 would return 7
+    """
+    n = len(arr)
+    if key < arr[0]:
+        return 0
+    elif arr[n-1] < key:
+        return n
+    left = 0
+    right = n-1
+    while left <= right:
+        m = (left + right) // 2
+        if arr[m] == key:
+            return m
+        elif key < arr[m]:
+            # search left
+            right = m - 1
+        else:
+            # search right
+            left = m + 1
+    # not found...
+    # return the index where it *should* be
+    return left
+
+def rangeBinarySearch(arr, lower, upper):
+    """
+    Returns a pair of indices, (i, j) such that all values in the array/list
+    lie within the range given: [lower, upper]
+    """
+    n = len(arr)
+    i = binarySearch(arr, lower)
+    #shift i down as long as arr[i] == lower
+    while i > 0 and arr[i-1] == lower:
+        i -= 1
+    j = binarySearch(arr, upper)
+    while j < n and arr[j] == upper:
+        j += 1
+    return (i, j)
+
+
+arr = [4, 4, 4, 6, 7, 8, 8, 8, 8, 10, 12, 12, 20, 20, 20]
+(i, j) = rangeBinarySearch(arr, 7.1, 7.5)
+slice = arr[i:j]
+print("result = ", slice)
+```
+
+## Multiplication
+
+* Problem: given two $n$-digit integers $a, b$, compute $a \times b$
+* The naive "grade school" multiplication method makes $O(n^2)$ single digit multiplications
+* Karatsuba: $O(n^{1.58 \ldots})$
+* Toom Cook: 1963 $O(n^{1.465})$
+* Schonhage-Strassen (1968, FFT): $O(n\log{n}\log{\log{n})})$
+* Furer (2007): $O(n\log{n}\cdot2^{\log^*{n}})$
+* 2019: reached optimality: $O(n\log{n})$
+
+## Strassen's Matrix Multiplication
+
+* What if you don't have square matrices?
+* What if your matrices are not nice "powers of two"
+* Pad them out with zeros!
+
+
 ```text
 
 

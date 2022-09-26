@@ -163,7 +163,7 @@ Input: a set of points $S$, presorted with respect to the x coordinates
 0: Base case: if the size of $S$ is "small enough" then use brute force (generate all pairs) to solve the problem, return the pair/distance of the two closest points
 1. Partition $S$ into two roughly equally sized lists of points, $L, R$ via their x-coordinates
 2. Recursively find the two closest points $(p,q)$ in the left, $(r,s)$ in the right
-3. Choose teh closest pair between $(p,q), (r, s)$, WLOG suppose this is $(p,q)$ with a distance $\delta$
+3. Choose the closest pair between $(p,q), (r, s)$, WLOG suppose this is $(p,q)$ with a distance $\delta$
 4. Find the median $x$-value (call it $m$) between the two partitions
 5. Build a subset of $S$ whose $x$ values are in $[m - \delta, m + \delta]$
   * You *need* to or *should* use binary search to find these slice cutoffs: using linear search gives you $O(n)$ behavior and a quadratic algorithm
