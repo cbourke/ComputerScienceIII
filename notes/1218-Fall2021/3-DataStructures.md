@@ -33,7 +33,6 @@
 
 ### Trees: A Review
 
-
 * Trees are acyclic graphs
 * Binary Search Trees:
   * Each node contains a unique *key* element (integers)
