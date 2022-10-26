@@ -104,14 +104,71 @@
   * Run DFS/BFS: if you ever encounter a visited vertex that you did not immediately come from, you found a cycle!
   * A cycle of length $\ell$? (difficult)
   * Given a particular vertex $v$, is there a cycle that involve $v$?
+* Types of Problems
+  * Decision Problems = yes/no questions
+  * Function Problems: output a solution if one exists
+  * Optimization Problems: output the *best* solution
+  * Counting Problems: how many valid solutions exist?
 * Bipartite Testing
+  * A graph $G$ is bipartite if its vertices can be partitioned into two sets $L, R$ such that edges only connect between the two sets
+  * Given a graph $G$, is it bipartite or not?
+  * Observation: $G$ is bipartite iff $G$ contains no odd length cycles
+  * Pseudocode
 
-## Types of Problems
+### Condensation Graphs
 
-* Decision Problems = yes/no questions
-* Function Problems: output a solution if one exists
-* Optimization Problems: output the *best* solution
-* Counting Problems: how many valid solutions exist?
+* A morphism is a mapping from one graph to another graph such that the mapping *preserves* some structure
+* A homomorphism is a mapping from one graph to another graph that preserves connectivity (edge connectivity)
+* Goal: take a directed graph and *simplify* it to its core connectivity
+* Two vertices in a digraph (directed graph) are *strongly connected* if there is a directed path from one to the other and vice versa
+* Create a "smaller" condensation graph of a directed graph: smaller graph that preserves *strongly connected compontents*
+* You start with a directed graph:
+  1. Perform a DFS noting the finish times
+  2. You compute the *transpose* graph (you simply reverse the edge orientation)
+  3. You perform another DFS in order of finish time; each time you start over you create a new node (this indicates a strongly connected component)
+
+## Minimum Spanning Trees
+
+* Given an undirected weighted (connected) graph (edges have weights), you want to create a *spanning tree* of minimum total weight
+* A spanning tree is a tree (same vertex set, subset of edges) that leave the graph still connected but acyclic
+* Many spanning trees may exist, but you want to find the "best" one: the one of minimum weight
+* even then, there may be more than one MST
+* Note: if you have a disconnected graph, it is still possible to compute a Minimum Spanning Forest
+
+### Kruskal's Algorithm
+
+* Greedy Algorithm: it makes *locally optimal choices* which lead to a *globally* optimal solution
+* Basic Idea: you consider edges in increasing order of weight; add them if adding them would not *induce a cycle* (create a cycle); otherwise you don't add them
+* Problem: the naive implementation gives a $O(m) \cdot O(m + n) = O(n^4)$ worst case running time
+* Observation: DFS is performed on a *sparse graph*
+* A sparse graph means you don't have many edges, $m = O(n)$
+* so DFS = $O(n + n) = O(n)$; still $O(n^3)$ overall
+* Another, potentially better way is to not do cycle detection: use a smart data structure!
+
+#### Disjoint Set Data Structure
+
+* Purpose: we maintain a collection of *disjoint* sets of elements, then eventually we *combine* or Union them all together
+* Sets are represented as trees; BUT: there may be an arbitrary number of children and we only maintain references to the *parent* NOT the children
+* Each set is identified with a *representative*: the root of the tree
+
+**Operations**
+
+* Initialize(u): creates a single node "tree" where
+  * $u$ is the representative
+  * $u$ is checked to make sure it is not part of any other tree already
+  * We will maintain random access to each node so we can "jump" to the node in any particular
+* Find-Set(u): returns the *representative* of the set containing $u$  
+* SameSet(u, v): returns true if both $u$ and $v$ are in the same set; ie if they have the same representative: two calls to Find-Set
+* Union(u, v): combines the set containing $u$ and the set containing $v$ into one new set
+* Essential details:
+  - When union-ing two sets we always attach the smaller (shallower) of two trees to the larger
+  - Optimization step: every operation that traverses up the tree will also collapse it at the same time
+* The efficiency depends on the height of the trees; at most the height is $O(\log{n})$
+* The overall (amortized) cost of starting with $n$ disjoint sets and union-ing them until you have one set is $O(n)$
+
+## Prim's Algorithm
+
+* Works by starting at a single vertex and "building" a connected tree outward
 
 ```text
 
