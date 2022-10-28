@@ -169,6 +169,133 @@
 ## Prim's Algorithm
 
 * Works by starting at a single vertex and "building" a connected tree outward
+* Vertices are separated into three sets:
+  * Tree vertices: vertices that have been added to the "intermediate" MST
+  * Fringe vertices: vertices that have been "seen" (ie are connected to tree vertices)
+  * Unseen vertices: vertices that are not connected to the tree yet
+* Consider vertices on the the "fringe": which one do you add next?
+
+### Efficiency
+
+* We store triples of vertices and their weights so at most $n$ elements are ever stored in the heap
+* Updating the priority of a single element (assuming you have random access to it) in a heap is at most $O(\log{n})$
+* THe number of iterations: $n$
+* BUT: you also update the priority for *every* edge overall, $O(m)$
+* In total you have $O(m\log{n})$ operations
+
+
+```python3
+import random
+
+class PriorityQueue:
+    """
+    A priority queue/min heap implementation that supports
+    additional features over the standard python heaq
+    implementation.
+
+    Items need to be hashable, priorities must be comparable
+    but generally should be numerical.
+    """
+
+    def __init__(self):
+        self.itemToIndex = {}
+        self.arr = []
+
+    def isEmpty(self):
+        return len(self.arr) == 0
+
+    def enqueue(self, item, priority):
+        self.arr.append( (item, priority) )
+        currIndex = len(self.arr) - 1
+        while currIndex > 0 and self.arr[currIndex][1] < self.arr[ currIndex//2 ][1]:
+            self.arr[currIndex], self.arr[ currIndex//2 ] = self.arr[ currIndex//2 ], self.arr[currIndex]
+            self.itemToIndex[ self.arr[currIndex][0] ] = currIndex
+            currIndex = currIndex // 2
+        self.itemToIndex[item] = currIndex
+
+    def dequeue(self):
+        (item, priority) = self.arr[0]
+        self.itemToIndex.pop(item)
+        #x is the last item
+        (x,p) = self.arr.pop()
+        if not self.arr:
+          # queue is now empty
+          return (item, priority)
+        self.arr[0] = (x,p)
+        self.itemToIndex[x] = 0
+        currIndex = 0
+        while True:
+          if currIndex >= len(self.arr):
+            break
+          # 0-index based:
+          # i -> 2(i+1) - 1 (left)
+          # i -> 2(i+1)     (right)
+          leftIndex  = 2 * (currIndex+1) - 1
+          rightIndex = 2 * (currIndex+1)
+          swapIndex = currIndex
+          if leftIndex < len(self.arr) and self.arr[swapIndex][1] > self.arr[leftIndex][1]:
+            swapIndex = leftIndex
+          if rightIndex < len(self.arr) and self.arr[swapIndex][1] > self.arr[rightIndex][1]:
+            swapIndex = rightIndex
+          if swapIndex == currIndex:
+            break #no children or both are greater
+          self.arr[swapIndex], self.arr[currIndex] = self.arr[currIndex], self.arr[swapIndex]
+          self.itemToIndex[self.arr[swapIndex][0]] = swapIndex
+          self.itemToIndex[self.arr[currIndex][0]] = currIndex
+          currIndex = swapIndex
+        return (item, priority)
+
+    def updatePriority(self, item, newPriority):
+        if item not in self.itemToIndex:
+            return
+        itemIndex = self.itemToIndex[item]
+        self.arr[itemIndex] = (item, newPriority)
+        # go up
+        currIndex = itemIndex
+        while currIndex > 0 and self.arr[currIndex][1] < self.arr[ currIndex//2 ][1]:
+            self.arr[currIndex], self.arr[ currIndex//2 ] = self.arr[ currIndex//2 ], self.arr[currIndex]
+            self.itemToIndex[ self.arr[currIndex][0] ] = currIndex
+            currIndex = currIndex // 2
+        self.itemToIndex[item] = currIndex
+        # go down
+        while True:
+          if currIndex >= len(self.arr):
+            break
+          # 0-index based:
+          # i -> 2(i+1) - 1 (left)
+          # i -> 2(i+1)     (right)
+          leftIndex  = 2 * (currIndex+1) - 1
+          rightIndex = 2 * (currIndex+1)
+          swapIndex = currIndex
+          if leftIndex < len(self.arr) and self.arr[swapIndex][1] > self.arr[leftIndex][1]:
+            swapIndex = leftIndex
+          if rightIndex < len(self.arr) and self.arr[swapIndex][1] > self.arr[rightIndex][1]:
+            swapIndex = rightIndex
+          if swapIndex == currIndex:
+            break #no children or both are greater
+          self.arr[swapIndex], self.arr[currIndex] = self.arr[currIndex], self.arr[swapIndex]
+          self.itemToIndex[self.arr[swapIndex][0]] = swapIndex
+          self.itemToIndex[self.arr[currIndex][0]] = currIndex
+          currIndex = swapIndex
+
+    def __str__(self):
+        return str(self.arr) + "\n" + str(self.itemToIndex)
+
+
+h = PriorityQueue()
+for p in range(26):
+    h.enqueue(chr(p+65), random.randint(0, 100))
+for p in range(26):
+    h.updatePriority(chr(p+65), random.randint(0, 100))
+for p in range(26):
+    h.updatePriority(chr(p+65), random.randint(0, 100))
+for p in range(26):
+    h.updatePriority(chr(p+65), random.randint(0, 100))
+while not h.isEmpty():
+    x = h.dequeue()
+    print("x = ",x)
+
+```
 
 ```text
 
