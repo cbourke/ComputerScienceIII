@@ -22,6 +22,8 @@ $${n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}$$
 
 ## FAST Method
 
+https://www.byte-by-byte.com/fast-method/
+
 * First Solution
 * Analyze the first solution
 * Identify the *S*ubproblems

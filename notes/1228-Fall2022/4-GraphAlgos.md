@@ -297,6 +297,26 @@ while not h.isEmpty():
 
 ```
 
+## Shortest Distance Algorithms
+
+### Dijkstra's Algorithm
+
+* Basic Idea: given a single source vertex $s$ in a weighted graph $G = (V, E)$,
+find the shortest path from $s$ to *all other* vertices
+  * Start at $s$ and explore neighborhoods
+  * Each iteration: select the *least weighted path* vertex
+  * Explore that vertex's neighborhood: if you find a lesser path, update the weight
+  * keep track of the *predecessor* vertex (how you go there) and least weight
+  * Each iteration *fixes* a vertex/path in the "tree"
+
+* Given the triples from Dijkstra's algorithm, compute the actual paths
+* Given for example: $(v, p_v, d_v)$
+
+## Floyd-Warshall Algorithm
+
+* All pairs shortest path algorithm
+
+
 ```text
 
 
