@@ -114,13 +114,90 @@ $$L = \{ G | \textrm{$G$ is an acyclic graph}\}$$
 
 ## Computational Complexity
 
+* Given an algorithm, you can analyze its complexity using Big-O analysis
+  * Selection Sort: $O(n^2)$
+  * Quick Sort: $O(n\log{n})$
+  * Both of these are algorithms that solve the "sorting problem"
+* For Turing Machines:
+  * "Time" is measured by the number of transitions from one state to another for a given input before it halts (and accepts or rejects)
+  * "memory" is measured with respect to the amount of "work tape" used in the computation of an input
+  * The input size of a Turing Machine is the number of bits in the input tape: $x$, $|x| = n$ (the length of the input $x$)
+* It makes sense to bound a Turing Machine just like an algorithm:
+  * $T(n) = O(f(n))$ is a time bound on the running time of a Turing Machine
+* This allows us to define *complexity classes*
+  * NOTE: complexity classes are with respect to *problems* NOT algorithms!
+  * Algorithms are proof that a problem lies within a complexity class!
+* The complexity class *deterministic polynomial time*, denoted $\mathsf{P}$ is the class of all problems such that there exists a deterministic TM that decides the problem
+* $\mathsf{P}$ is the set of all languages that are *decidable* by a deterministic TM that runs in polynomial time, $f(n) \in O(n^k)$
+  * Example: Is the sorting problem in $\mathsf{P}$?
+  * Yes: the existence of selection sort/quick sort proves that you can solve the problem in polynomial time
+  * 0-1 Knapsack problem: is that in $\mathsf{P}$? Who knows, no one has come up with a polytime algorithm for it (yet).
+* Another complexity class: $\mathsf{EXP}$ are all languages decidable by a TM that runs in *exponential time*: $f(n) \in O(2^n)$
+  * Is the sorting problem in $\mathsf{EXP}$?  Yes
+  * Is 0-1 Knapsack in $\mathsf{EXP}$?  Yes
+* Observation:
+  $$\mathsf{P} \subseteq \mathsf{EXP}$$
+* Keep in mind that these complexity classes are *sets of languages*
+
+### Nondeterminisic Computation
+
+* This is not "randomness", it is not a "real" computational model
+* Nondeterminism is a *theoretical* model of computation
+* Nondeterminism works in two phases:
+  * Guessing Phase: it guesses a solution to a given problem nondeterministically (polynomial time)
+  * Verification phase: given the guess, it verifies if it is a "valid" solution or not (if it is a valid solution, the solution is called a "certificate") also has to be polynomial
+  * Overall, a nondeterministic TM accepts an input if *any* possible computational branch or guess is a valid certificate
 
 
+## Reductions
 
+* Goal: we want to establish the relative complexity of problems (*not* algorithms)
+* Definition: Let $P_1$ and $P_2$ be problems (languages).  We say that $P_1$ reduces to $P_2$ and write
+  $$P_1 \leq_{\mathsf{P}} P_2$$
+if there exists a function $f$ such that
+  * $f$ maps all yes instances of problem $P_1$ to yes instances of $P_2$
+  * $f$ is computable in deterministic polynomial time $\mathsf{P}$ (subscript)
+* Interpretation:
+  * These are "mapping" reductions: they map one problem to another
+  * If you have a solution to problem $P_2$ then you have a solution to $P_1$
+* Interpretation: if $P_1 \leq_{\mathsf{P}} P_2$:
+  * $P_1$ is no more difficult/hard/complex tan $P_2$
+  * $P_2$ is *at least* as difficult/hard/complex as $P_1$
+  * It *could* be that they have an equal complexity
+  * It *could* be that $P_2$ is *strictly* harder/more complex (but we don't know)
+* Observations:
+  * "Reduction" is not reducing complexity; it is not making things "easier"
+  * "Reduction" simply means you are translating or mapping one problem to another
+  * ONLY IF you have a solution to the second problem, do you have a solution to the first
+  * If you have a solution to the first problem and a reduction to the second problem: who cares?  It does not give you a solution to the second problem
+  * The power of the reduction (the mapping) CANNOT be more powerful than the problems themselves
+    * Ex: if the reduction itself (mapping) were allowed an exponential amount of time $\mathsf{EXP}$, then you could solve any problem in exponential time and "cheat" on the reduction
+  * Possible: you end up reducing multiple problems into one
 
+### Completeness
 
-
-
+* A problem $P$ is in the complexity class $\mathsf{NP}$ if it is decidable by a nondeterministic polynomial time TM
+* A problem $A$ is $\mathsf{NP}$-complete if *every problem* in $\mathsf{NP}$ reduces to it!
+  * Every problem in $\mathsf{NP}$ reduces to it
+  * It reduces to any other $\mathsf{NP}$-complete problem!
+* Observation: if you have a solution to even a *single* $\mathsf{NP}$-complete problem, you have a solution to *every* $\mathsf{NP}$ problem!
+* Observation: if your so-called solution, runs in deterministic polynomial time, then you've shown that $\mathsf{P} = \mathsf{NP}$
+* However, it is very unlikely that is the case, more likely is that $\mathsf{P} \neq \mathsf{NP}$
+* Examples of $\mathsf{NP}$-complete
+  * 0-1 Knapsack Problem
+  * Hamiltonian Path/cycle problem
+  * Satisfiability
+  * Hundreds of others
+* To prove a problem is $\mathsf{NP}$-complete, you need a starting point: you need to establish the *first* $\mathsf{NP}$-complete problem
+  * Suppose $L_\mathsf{NP}$ is $\mathsf{NP}$-complete.
+  * EVERY problem in $\mathsf{NP}$ reduces to $L_\mathsf{NP}$
+  * If you want to show a different problem, $B$ is $\mathsf{NP}$-complete it is enough to show:
+    $$L \leq_{\mathsf{P}} B$$
+* Starting Point: Satisfiability: Cook-Levin first showed that a "canonical" $\mathsf{NP}$-compelete problem reduced to satisfiabiliity:
+$$L_\mathsf{NP} = \{ \langle M, x \rangle | M \text{ is a nondeterministic Turming machine that accepts x in a polynomial amount of time}\}$$
+* Cook Levin Showed:
+  $$L_\mathsf{NP} \leq_{\mathsf{P}} SAT$$
+* Reduce SAT to the Clique problem
 
 
 

@@ -151,7 +151,7 @@ $$\mathsf{P} = \mathsf{NP}?$$
 
 
 * Goal: we want to establish the relative complexity of problems (NOT algorithms)
-* RElative complexity of algorithms can be done with big-O analysis
+* Relative complexity of algorithms can be done with big-O analysis
 * We want to deal with *problems* (languages), not algorithms
 * In general: you can use or adopt a (supposed) solution for one problem $B$ to solve another problem $A$
   * $A$ is no more complex than $B$
