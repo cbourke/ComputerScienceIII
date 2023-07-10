@@ -1,7 +1,7 @@
 # Computer Science III
 ### CSCE 310 - Data Structures & Algorithms
 
-**[Department of Computer Science & Engineering](https://cse.unl.edu)**  
+**[School of Computing](https://computing.unl.edu)**  
 **[College of Engineering](https://engineering.unl.edu/)**
 **[University of Nebraska-Lincoln](https://unl.edu)**
 
@@ -16,9 +16,12 @@ https://bitbucket.org/chrisbourke/computerscienceiii/src/master/ComputerScienceT
 
 ## Course Offerings
 
-### Fall 2022 (Honors)
+### Fall 2023 (Honors)
 
-(starting Monday, August 22, 2022)
+- Course Link: https://canvas.unl.edu/courses/158359
+- Lectures: https://www.youtube.com/playlist?list=PL4IH6CVPpTZU3gVuZ5vpU758_883lbNn5
+
+### Fall 2022 (Honors)
 
 - Course Link: https://canvas.unl.edu/courses/136571
 - Lectures: https://www.youtube.com/playlist?list=PL4IH6CVPpTZWXnPzeWZuLG_dGvF4jhPQG

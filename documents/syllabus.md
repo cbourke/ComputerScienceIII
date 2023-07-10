@@ -1,7 +1,7 @@
 # Computer Science III
 
-### CSCE 310H - Syllabus - Fall 2022
- [Department of Computer Science & Engineering](https://cse.unl.edu/)  
+### CSCE 310H - Syllabus - Fall 2023
+ [School of Computing](https://computing.unl.edu/)  
  [College of Engineering](https://engineering.unl.edu/)  
  [University of Nebraska Lincoln](https://unl.edu/)  
 
@@ -38,8 +38,7 @@ Introduction to computability and NP-completeness.
 Anany Levitin. However, no text book is required as there are plenty of
 free online Data Structures and Algorithms resources:
 
--   My
-    [lecture note set](https://bitbucket.org/chrisbourke/computerscienceiii/src/master/ComputerScienceThree.pdf)
+-   My [lecture note set](https://bitbucket.org/chrisbourke/computerscienceiii/src/master/ComputerScienceThree.pdf)
 
 -   Open DSA: <https://opendatastructures.org/>
 
@@ -61,6 +60,11 @@ discrete structures which we will study in this course. Specifically,
 you will learn many of the mathematical definitions, techniques, and
 ways of thinking that will be useful in Computer Science.
 
+## University Policies, Resources & Services
+
+Students are responsible for knowing the university policies and
+be aware of resources found on this page: https://go.unl.edu/coursepolicies
+
 ## Topics & Schedule
 
 See Canvas
@@ -70,7 +74,7 @@ See Canvas
 This course is delivered in an asynchronous *hybrid* mode:
 
 -   Live lectures are livestreamed via YouTube
-    (<https://www.youtube.com/c/ChrisBourkeUNL/live>) during the
+    (<https://www.youtube.com/@ChrisBourkeUNL/live>) during the
     regular class time.  
 
     -   Recordings of the lectures will be available immediately
@@ -85,21 +89,6 @@ This course is delivered in an asynchronous *hybrid* mode:
 -   Programs and other artifacts are to be submitted through  
     webhandin (<https://cse.unl.edu/handin>) and can be graded using
     the webgrader (<https://cse.unl.edu/~cse310h/grade>)
-
--   Office hours will be held online via zoom
-
-# Accommodations for Students with Disabilities
-
-The University strives to make all learning experiences as accessible as
-possible. If you anticipate or experience barriers based on your
-disability (including mental health, chronic or temporary medical
-conditions), please let me know immediately so that we can discuss
-options privately. To establish reasonable accommodations, I may request
-that you register with Services for Students with Disabilities (SSD). If
-you are eligible for services and register with their office, make
-arrangements with me as soon as possible to discuss your accommodations
-so they can be implemented in a timely manner. SSD contact information:
-117 Louise Pound Hall.; 402-472-3787
 
 # Grading
 
@@ -210,7 +199,7 @@ to read, understand, and follow this policy. Violations will be dealt
 with on a case by case basis and may result in a failing assignment or a
 failing grade for the course itself. The most recent version of the
 Academic Integrity Policy can be found at
-<http://cse.unl.edu/academic-integrity>
+<https://computing.unl.edu/academic-integrity-policy/>
 
 # Honors Section
 
@@ -248,7 +237,7 @@ to voice your concerns about any problems in the course if you do not
 wish to be identified. My personal box is available at
 <https://cse.unl.edu/~cbourke/email/>. The department also maintains an
 anonymous suggestion box available at
-<https://cse.unl.edu/contact-form>.
+<https://computing.unl.edu/anonymous-department-feedback-form/>.
 
 ## Getting Help
 
