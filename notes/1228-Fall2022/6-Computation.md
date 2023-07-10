@@ -199,7 +199,32 @@ $$L_\mathsf{NP} = \{ \langle M, x \rangle | M \text{ is a nondeterministic Turmi
   $$L_\mathsf{NP} \leq_{\mathsf{P}} SAT$$
 * Reduce SAT to the Clique problem
 
+$$L_{\mathsf{NP}} = \left\{\langle M, x \rangle \left|
+\begin{array}{l}
+  \text{$M$ is a non-deterministic Turing Machine that} \\
+  \text{accepts $x$ in a polynomial number of steps}
+\end{array}
+\right.
+\right\}$$
 
+* SAT = Given a logical formula on $n$ variables, $x_1, \ldots, x_n$, does there exist an assignment of the truth values that evaluates the expression to true
+
+* Chain so far:
+  $$L_{\mathsf{NP}} \leq_{\mathsf{P}} SAT \leq_{\mathsf{P}} 3SAT$$
+* 3SAT is a satisfiability problem where all expressions are CNF = Conjunctive Normal Form: you have a series of clauses each of which is a *disjunction* (ORs) and the expression is the *conjunction* (ANDs) of the clauses; each clause only has 3 variables or their negations
+* Our reduction: $3SAT\leq_{\mathsf{P}} Clique$
+
+### Proving $\mathsf{NP}$-completeness
+
+* 5 step process: you want to show that a problem $P$ is $\mathsf{NP}$-complete
+
+1. Show that $P$ is in $\mathsf{NP}$: by coming up with a nondeterministic polytime algorithm for it
+2. You select a known $\mathsf{NP}$-complete problem to reduce *to* your problem $P$
+  * Going *from* the known $\mathsf{NP}$-complete problem
+  * Going *to* your problem!
+3. You come up with a mapping reduction that maps yes instances of the $\mathsf{NP}$-complete problem to yes instances of your problem $P$
+4. You prove your reduction is correct (it preserves solutions)
+5. You show that your reduction is computable in deterministic polynomial time
 
 
 ```text
