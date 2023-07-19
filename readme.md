@@ -16,11 +16,6 @@ https://bitbucket.org/chrisbourke/computerscienceiii/src/master/ComputerScienceT
 
 ## Course Offerings
 
-### Fall 2023 (Honors)
-
-- Course Link: https://canvas.unl.edu/courses/158359
-- Lectures: https://www.youtube.com/playlist?list=PL4IH6CVPpTZU3gVuZ5vpU758_883lbNn5
-
 ### Fall 2022 (Honors)
 
 - Course Link: https://canvas.unl.edu/courses/136571
